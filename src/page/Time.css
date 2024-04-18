@@ -1,0 +1,66 @@
+.Timebar_contant{
+  margin-top: 120px;
+  /* background-color: black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  justify-items: center;
+  align-content: center;
+  padding: 5px;
+  
+}
+.Timebar_time_1{
+    color: aliceblue;
+    background-color:rgba(0, 0, 0, 0.325);
+    padding: 20px;
+    border-radius:  10px 0 0 10px;
+}
+.Timebar_time_2{
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.325);
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+}
+.Timebar_contant_2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Timebar_time_3{
+  color: #fdfafa;
+  background-color: rgba(0, 0, 0, 0.325);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+
+@media only screen and (max-width :900px){
+    .Timebar_contant{
+        margin-top: 75px;
+
+
+    }
+
+ .Timebar_time_1{
+   padding: 5px;
+   font-size: 10px;
+
+ }
+
+ .Timebar_time_2{
+    padding: 5px;
+    font-size: 10px;
+
+ }
+ .Timebar_time_3{
+    font-size: 20px;
+ }
+
+}
+.Regi_time{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+

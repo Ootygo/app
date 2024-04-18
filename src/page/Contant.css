@@ -1,0 +1,60 @@
+.kavi{
+    margin-top: 10px;
+    left: 0%;
+    
+}
+
+.Cantant{
+    height:auto;
+    /* background-color: rgb(0, 0, 0); */
+    margin-top: 0;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.Contant_1,
+.Contant_2{
+    margin-top: 10px;
+
+}
+.Contant_img{
+     height: 400px;
+     width: 400px;
+     border-radius: 80px;
+     box-shadow: 5px 10px 10px;
+     cursor: pointer;
+}
+.Contant_img:hover{
+    transform: scale(1.1);
+    transition: 150ms;
+}
+.Contant_Title{
+    color: white;
+    margin-left: 140px;
+    font-size: 40px;
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.514);
+    border-radius: 10px;
+    width: fit-content;
+    padding: 5px;
+}
+
+@media only screen and (max-width:900px){
+    .Contant_img{
+      height: 150px;
+      width: 150px;
+    }
+    .Contant_Title{
+        color: white;
+        margin-left: 0px;
+        font-size: 30px;
+        font-weight: 200;
+    }
+    .Contant_Title{
+        color: white;
+        margin-left: 50px;
+        font-size: 20px;
+        font-weight: 100;
+    }
+    
+}

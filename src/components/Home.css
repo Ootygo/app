@@ -1,0 +1,11 @@
+.Home_body{
+    background-image: url('https://wallpapercave.com/dwp1x/wp3500254.jpg' );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.434);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    z-index: -3;
+    
+    
+}

@@ -1,0 +1,109 @@
+.Navbar {
+    height: 120px;
+    width: 100%;  
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    z-index: 2;
+}
+
+.Navbar_menu_item {
+    background-color: rgba(6, 132, 210, 0.88);
+    font-size: 25px;
+    margin-top: 20px;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 50px;
+    color: white;
+   
+}
+
+.Navbar_menu2_logo {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+   
+}
+
+.Navbar_menu2> :first-child {
+    margin-top: 0;
+}
+
+.Navbar_menu_item:hover{
+    background-color: rgb(27, 249, 175);
+    cursor: pointer;
+    color: black;
+    transition-duration: 600ms;
+}
+.Navbar_menu2_logo:hover{
+    transform: scale(0.9);
+    transition: 150ms;
+    border: 5px solid white;
+    cursor: pointer;
+    z-index: 2;
+}
+
+@media only screen and (max-width :900px) {
+    .Navbar_menu_item {
+        font-size: 10px;
+        margin-top: 10px;
+        height: fit-content;
+        padding: 5px;
+        border-radius: 50px;
+    }
+    .Navbar_menu2_logo {
+        height: 80px;
+        width: 80px;
+        border-radius: 100px;
+    
+    }
+    .Navbar{
+        height: 80px;
+    }
+    .bi{
+        height:15px;
+        width:15px;
+    } 
+}
+
+.Register_page{
+    color: rgb(140, 15, 202);
+    display: flex;
+    align-items:center;
+  }
+  
+  .Register_btn{
+    color: #c90000;
+    z-index: 3;
+    background-color: rgba(20, 213, 152, 0.584);
+  
+  }
+
+#Signup_btn{
+ text-decoration: none;
+ color: azure;
+
+}
+#Home_btn{
+    text-decoration: none;
+    color: azure;
+}
+#Places_btn{
+    text-decoration: none;
+    color: azure;
+}
+.bi-house:hover{
+    color: black;
+} 
+.bi-person-circle:hover{
+    color: black;
+} 
+#Places_btn:hover{
+    color: black;
+} 
+
