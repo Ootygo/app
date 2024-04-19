@@ -18,8 +18,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/Places' element={<Places />} />
-          <Route path='/Stay' element={<Stay />} />
+          <Route path='/Places' element={<Places/>} />
+          <Route path='/Stay' element={<Stay/>} />
           <Route path='/Travel' element={<Travel />} />
         </Routes>
       </BrowserRouter>

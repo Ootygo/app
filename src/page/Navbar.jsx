@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <>
       <div className="Navbar">
-        <Link to='/'>
+        <Link to='/' id="Home_btn">
           <span className="Navbar_menu_item">
 
             <svg
@@ -28,7 +28,7 @@ function Navbar() {
           </span>
         </Link>
 
-        <Link to='Places'>
+        <Link to='Places' id="Places_btn">
           <span className="Navbar_menu_item">
 
             Place
@@ -36,7 +36,7 @@ function Navbar() {
           </span>
         </Link>
         
-        <Link to='Stay'>
+        <Link to='Stay' id="Places_btn">
 
           <span className="Navbar_menu_item">
 
@@ -57,7 +57,7 @@ function Navbar() {
           </span>
         </Link>
 
-        <Link to='Travel'>
+        <Link to='Travel' id="Places_btn">
           <span className="Navbar_menu_item">
 
             Travel
