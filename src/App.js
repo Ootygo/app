@@ -5,11 +5,13 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Link
 }
   from 'react-router-dom';
 import Places from './components/Places';
 import Stay from './components/Stay';
 import Travel from './components/Travel';
+import Food from './components/Food';
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
           <Route path='/Places' element={<Places/>} />
           <Route path='/Stay' element={<Stay/>} />
           <Route path='/Travel' element={<Travel />} />
+          <Route path='/Food' element={<Food />} />
         </Routes>
       </BrowserRouter>
     

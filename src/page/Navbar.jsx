@@ -1,16 +1,17 @@
 import React from "react";
 import "./Navbar.css";
-import {
-  Link
-}
-  from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "bootstrap";
 import "../components/Places";
+import "../components/Home";
+import "../components/Stay";
+import "../components/Travel";
 
 function Navbar() {
   return (
     <>
       <div className="Navbar">
+        <span>
         <Link to='/' id="Home_btn">
           <span className="Navbar_menu_item">
 
@@ -27,7 +28,8 @@ function Navbar() {
 
           </span>
         </Link>
-
+        </span>
+        <span>
         <Link to='Places' id="Places_btn">
           <span className="Navbar_menu_item">
 
@@ -35,7 +37,8 @@ function Navbar() {
 
           </span>
         </Link>
-        
+        </span>
+        <span>
         <Link to='Stay' id="Places_btn">
 
           <span className="Navbar_menu_item">
@@ -44,6 +47,8 @@ function Navbar() {
 
           </span>
         </Link>
+        </span>
+        <span>
 
         <Link to='/'>
           <span>
@@ -56,7 +61,8 @@ function Navbar() {
 
           </span>
         </Link>
-
+        </span>
+        <span>
         <Link to='Travel' id="Places_btn">
           <span className="Navbar_menu_item">
 
@@ -64,11 +70,12 @@ function Navbar() {
 
           </span>
         </Link>
-
+        </span>
+        <Link to='Food' id='Places_btn'>
         <span className="Navbar_menu_item">
           Food
         </span>
-
+        </Link>
         <span className="Navbar_menu_item">
           <span>
             <svg

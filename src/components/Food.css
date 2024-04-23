@@ -1,0 +1,37 @@
+.Food_contant{
+    width: 100%;
+    margin-top: 80px;
+    height: auto;
+    background-color: black;
+}
+.Food_contant_item{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+.Food_contant_items{
+    max-width: 200px;
+    margin: 20px;
+}
+#Food_contant_title{
+    
+    background-color: black;
+    color: white;
+}
+.Food_contant_Item_title{
+    color: white;
+}
+.Food_contant_img{
+    height: 180px;
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid grey;
+}
+.Food_contant_img:hover{
+    transition: 150ms;
+    transform: scale(1.1)
+}
+.Food_contant_about{
+    color: white;
+}
