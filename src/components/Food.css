@@ -1,22 +1,31 @@
 .Food_contant{
     width: 100%;
-    margin-top: 80px;
+    margin-top: 100px;
+    
     height: auto;
     background-color: black;
 }
+
 .Food_contant_item{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
     
 }
 .Food_contant_items{
     max-width: 200px;
-    margin: 20px;
+    margin: 10px;
+    cursor: pointer;
 }
 #Food_contant_title{
-    
-    background-color: black;
+    background-color: rgba(128, 128, 128, 0.479);
+    width: fit-content;
+    padding: 8px;
+    border-radius: 10px;
+    margin-left: 10px;
     color: white;
 }
 .Food_contant_Item_title{
@@ -34,4 +43,12 @@
 }
 .Food_contant_about{
     color: white;
+}
+@media only screen and (max-width :900px){
+    .Food_contant{
+        margin-top: 80px;
+    }
+    .Food_contant_title{
+        font-size: 8px;
+    }
 }

@@ -10,6 +10,7 @@
     left: 0%;
     top: 0%;
     z-index: 2;
+    box-shadow: 2px 0 10px gainsboro;
 }
 
 .Navbar_menu_item {
@@ -20,7 +21,9 @@
     padding: 5px;
     border-radius: 50px;
     color: white;
-   
+    display: flex;
+    justify-content: center;
+    align-items: center;   
 }
 
 .Navbar_menu2_logo {

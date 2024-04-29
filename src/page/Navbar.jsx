@@ -12,69 +12,69 @@ function Navbar() {
     <>
       <div className="Navbar">
         <span>
-        <Link to='/' id="Home_btn">
-          <span className="Navbar_menu_item">
+          <Link to="/" id="Home_btn">
+            <span className="Navbar_menu_item">
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              fill="currentColor"
-              class="bi bi-house"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-house"
+                viewBox="0 0 16 16"
+              >
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+              </svg>
 
-          </span>
-        </Link>
+            </span>
+          </Link>
         </span>
         <span>
-        <Link to='Places' id="Places_btn">
-          <span className="Navbar_menu_item">
+          <Link to="/Places" id="Places_btn">
+            <span className="Navbar_menu_item">
 
-            Place
+              Place
 
-          </span>
-        </Link>
+            </span>
+          </Link>
         </span>
         <span>
-        <Link to='Stay' id="Places_btn">
+          <Link to="/Stay" id="Places_btn">
 
-          <span className="Navbar_menu_item">
+            <span className="Navbar_menu_item">
 
-            Stay
+              Stay
 
-          </span>
-        </Link>
+            </span>
+          </Link>
         </span>
         <span>
 
-        <Link to='/'>
-          <span>
+          <Link to="/">
+            <span>
 
-            <img
-              className="Navbar_menu2_logo"
-              src="https://img1.wsimg.com/isteam/ip/ab7cd702-ceba-4c53-a312-1a0951af6c3a/LOGO.jpg/:/rs=h:175,m"
-              alt="logo"
-            />
+              <img
+                className="Navbar_menu2_logo"
+                src="https://img1.wsimg.com/isteam/ip/ab7cd702-ceba-4c53-a312-1a0951af6c3a/LOGO.jpg/:/rs=h:175,m"
+                alt="logo"
+              />
 
-          </span>
-        </Link>
+            </span>
+          </Link>
         </span>
         <span>
-        <Link to='Travel' id="Places_btn">
+          <Link to="/Travel" id="Places_btn">
+            <span className="Navbar_menu_item">
+
+              Travel
+
+            </span>
+          </Link>
+        </span>
+        <Link to="/Food" id='Places_btn'>
           <span className="Navbar_menu_item">
-
-            Travel
-
+            Food
           </span>
-        </Link>
-        </span>
-        <Link to='Food' id='Places_btn'>
-        <span className="Navbar_menu_item">
-          Food
-        </span>
         </Link>
         <span className="Navbar_menu_item">
           <span>
