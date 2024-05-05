@@ -1,30 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Time.css'
 
 const Time = () => {
-  const [countdown, setCountdown] = useState('');
+  const [timer, setTimer] = useState("00:00:00");
+  const targetTime = Date.parse("2024-07-22T00:00:00"); // set time
+
+  const getTimeRemaining = () => {
+    const total = targetTime - Date.now();
+    const seconds = Math.floor((total / 1000) % 60);
+    const minutes = Math.floor((total / 1000 / 60) % 60);
+    const hours = Math.floor(total / (1000 * 60 * 60));
+    return `${hours}:${minutes > 9 ? minutes : "0" + minutes}:${seconds > 9 ? seconds : "0" + seconds}`;
+  };
+
+  const startTimer = () => {
+    setTimer(getTimeRemaining());
+  };
 
   useEffect(() => {
-    const targetDate = new Date();
-    targetDate.setMonth(targetDate.getMonth() + 4);
-
-    const intervalId = setInterval(() => {
-      const now = new Date();
-      const distance = targetDate - now;
-
-      if (distance < 0) {
-        clearInterval(intervalId);
-        setCountdown('EXPIRED');
-      } else {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
-      }
-    }, 1000);
-
+    const intervalId = setInterval(startTimer, 1000);
     return () => clearInterval(intervalId);
   }, []);
 
@@ -32,10 +26,10 @@ const Time = () => {
     <>
 
       <div className='Timebar_contant'>
-        
+
         <h2 className='Timebar_time_1'>Our Service Starting in </h2>
-       
-        <h2 className='Timebar_time_2'>{countdown}</h2>
+
+        <h2 className='Timebar_time_2'>{timer} Hrs</h2>
       </div>
       <div className='Timebar_contant_2'>
         <h2 className='Timebar_time_3'>Explore OOTY Highlights !</h2>
