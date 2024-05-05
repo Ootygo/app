@@ -11,6 +11,7 @@
     top: 0%;
     z-index: 2;
     box-shadow: 2px 0 10px gainsboro;
+    font-family: "Poppins", sans-serif;
 }
 
 .Navbar_menu_item {
@@ -23,7 +24,8 @@
     color: white;
     display: flex;
     justify-content: center;
-    align-items: center;   
+    align-items: center;
+    font-family: "Poppins", sans-serif;   
 }
 
 .Navbar_menu2_logo {

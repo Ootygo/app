@@ -33,12 +33,12 @@ const Time = () => {
 
       <div className='Timebar_contant'>
         
-        <h1 className='Timebar_time_1'>Our Service Starting in </h1>
+        <h2 className='Timebar_time_1'>Our Service Starting in </h2>
        
-        <h1 className='Timebar_time_2'>{countdown}</h1>
+        <h2 className='Timebar_time_2'>{countdown}</h2>
       </div>
       <div className='Timebar_contant_2'>
-        <h1 className='Timebar_time_3'>Explore OOTY Highlights !</h1>
+        <h2 className='Timebar_time_3'>Explore OOTY Highlights !</h2>
       </div>
     </>
   );
