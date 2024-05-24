@@ -10,6 +10,41 @@
       "StackName": "amplify-ootygo-staging-352ba",
       "StackId": "arn:aws:cloudformation:ap-south-1:046474817983:stack/amplify-ootygo-staging-352ba/856dceb0-fcaa-11ee-a1e5-06f6c0cda6be",
       "AmplifyAppId": "d2ss70d0rjqeqo"
+    },
+    "categories": {
+      "auth": {
+        "ootygotest": {}
+      }
+    }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ootygo-dev-73369-authRole",
+      "UnauthRoleArn": "arn:aws:iam::046474817983:role/amplify-ootygo-dev-73369-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::046474817983:role/amplify-ootygo-dev-73369-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-ootygo-dev-73369-deployment",
+      "UnauthRoleName": "amplify-ootygo-dev-73369-unauthRole",
+      "StackName": "amplify-ootygo-dev-73369",
+      "StackId": "arn:aws:cloudformation:ap-south-1:046474817983:stack/amplify-ootygo-dev-73369/446c2240-19bf-11ef-8bd6-0282cda781c5",
+      "AmplifyAppId": "d2ss70d0rjqeqo"
+    },
+    "categories": {
+      "auth": {
+        "ootygotest": {
+          "userPoolId": "ap-south-1_BeFBlM0eK",
+          "userPoolName": "ootygo-staging",
+          "webClientId": "72nusjnpgd2srtmoqlclba3po7",
+          "nativeClientId": "1f2k417aqqa02b8t8h5t1bamls",
+          "identityPoolId": "ap-south-1:8cfeb039-daf1-4d0a-bd5c-8ed4bee43814",
+          "identityPoolName": "testAuthIdentityPool__staging",
+          "allowUnauthenticatedIdentities": true,
+          "authRoleArn": "arn:aws:iam::046474817983:role/amplify-ootygo-staging-352ba-authRole",
+          "authRoleName": "amplify-ootygo-staging-352ba-authRole",
+          "unauthRoleArn": "arn:aws:iam::046474817983:role/amplify-ootygo-staging-352ba-unauthRole",
+          "unauthRoleName": "amplify-ootygo-staging-352ba-unauthRole"
+        }
+      }
     }
   }
 }
