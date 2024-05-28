@@ -2,7 +2,7 @@ import React from "react";
 import './Stay.css';
 import Navbar from "../page/Navbar";
 import Footer from "../page/Footer";
-import Contantimg from "../assets/images/Contantimg";
+
 export default function Stay() {
     return (
         <>
@@ -18,7 +18,7 @@ export default function Stay() {
 
                 </div>
             </div>
-            <Contantimg/>
+            
             <Footer />
         </>
     )

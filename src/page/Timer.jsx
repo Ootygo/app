@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect} from 'react';
 import './Time.css'
 
 const Time = () => {
@@ -20,7 +20,7 @@ const Time = () => {
   useEffect(() => {
     const intervalId = setInterval(startTimer, 1000);
     return () => clearInterval(intervalId);
-  }, []);
+  },);
 
   return (
     <>

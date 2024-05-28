@@ -1,7 +1,7 @@
 import Footer from "../page/Footer";
 import Navbar from "../page/Navbar";
 import "./Food.css";
-import { Link } from "react-router-dom";
+
 
 export default function Food() {
     return (

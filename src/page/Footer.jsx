@@ -8,7 +8,7 @@ function Footer() {
         <div className="Footer_contant">
           <span className="Footer_contact_title">Follow Us On</span>
           <div className="Footer_social">
-            <a href="https://instagram.com/ootygo?utm_source=qr&igshid=OGIxMTE0OTdkZA==">
+            <a href="https://instagram.com/ootygo?utm_source=qr&igshid=OGIxMTE0OTdkZA==" className="Footer_icons">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ function Footer() {
                 </svg>
               </span>
             </a>
-            <a href="https://youtube.com/@ootygo?si=osDLPHE7mLyxWtAa">
+            <a href="https://youtube.com/@ootygo?si=osDLPHE7mLyxWtAa" className="Footer_icons">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
