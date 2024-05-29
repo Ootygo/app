@@ -7,6 +7,7 @@ import Places from './components/Places';
 import Stay from './components/Stay';
 import Travel from './components/Travel';
 import Food from './components/Food';
+import SignUp from './components/SignUp';
 
 const App = () => {
  return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/Stay" element={<Stay/>} />
           <Route path="/Travel" element={<Travel/>} />
           <Route path="/Food" element={<Food/>} />
+          <Route path="/SignUp" element={<SignUp/>} />
        </Routes>
     </>
  );

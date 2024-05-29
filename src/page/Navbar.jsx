@@ -6,6 +6,7 @@ import "../components/Places";
 import "../components/Home";
 import "../components/Stay";
 import "../components/Travel";
+import "../components/SignUp"
 
 function Navbar() {
   return (
@@ -76,6 +77,7 @@ function Navbar() {
             Food
           </span>
         </Link>
+        <Link to="/SignUp">
         <span className="Navbar_menu_item">
           <span>
             <svg
@@ -95,6 +97,7 @@ function Navbar() {
           </span>
 
         </span>
+        </Link>
       </div>
     </>
   );
