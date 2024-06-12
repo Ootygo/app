@@ -49,6 +49,43 @@
   .slide-container_titel_contant{
     text-indent: 20px;
   }
-  .slide-container_titel_contant>span{
-    font-weight: 700;
+  .slide-container_btn{
+    background-color: rgba(6, 132, 210, 0.88);
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 5px;
+    
+    min-width: 80px;
+
   }
+  .slide-container_btn:hover{
+    background-color: rgb(27, 249, 175);
+    transition: ease-in 0.5s;
+
+  }
+  @media only screen and (max-width :900px){
+    .slide-container{
+      margin-top: 80px;
+    }
+    .hover-video{
+      width: 350px;
+    }
+    .slide-container_titel{
+      top: 2px;
+      padding: 2px;
+      font-size: 15px;
+      font-weight: 200;
+    }
+    .slide-container_btn{
+      padding: 2px;
+      font-size: 15px;
+    }
+    .slide-container>p{
+      font-size: 15px;
+    }
+    
+  }
+

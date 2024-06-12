@@ -4,8 +4,9 @@ import "react-slideshow-image/dist/styles.css";
 import "./ImageSlider.css";
 import Navbar from "../../page/Navbar";
 import Footer from "../../page/Footer";
-import { useRef } from "react";
-// import ootygoAssetimg from "../../assets/images/Contantimg";
+import { useRef, useState } from "react";
+import { FaMicrophone } from "react-icons/fa";
+
 
 const spanStyle = {
   padding: "20px",
@@ -45,33 +46,56 @@ const ImageSlider = () => {
 
   const handleMouseLeave = () => {
     videoRef.current.pause();
-    // videoRef.current.currentTime = 0; // Optional: Reset video to start
+    videoRef.current.currentTime = 0; // Optional: Reset video to start
   };
+
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const textRef = useRef(null);
+  const speechSynthesisRef = useRef(window.speechSynthesis);
+
+  const speakText = () => {
+    // If speech is already in progress, stop it
+    if (isSpeaking) {
+      speechSynthesisRef.current.cancel();
+      setIsSpeaking(false);
+    } else {
+      // Otherwise, start speaking
+      const utterance = new SpeechSynthesisUtterance(
+        textRef.current.__reactProps$sfcc15u06mb.children
+      );
+      utterance.onend = () => setIsSpeaking(false);
+      speechSynthesisRef.current.speak(utterance);
+      setIsSpeaking(true);
+    }
+  };
+
   return (
     <>
       <Navbar />
       <div className="slide-container">
         <div className="video-container">
-          
-            <video
-              ref={videoRef}
-              src="https://lh3.googleusercontent.com/ggs/AF1QipOezG52n1o28P-cj1aAMBghH0RgBo0kAtljhC__=m18?cpn=GhwErVMktctn2xSd"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="hover-video"
-              muted
-              loop
-            ></video>
-            <h2 className="slide-container_titel">Pakkasuram malai</h2>
-          
-          <p className="slide-container_titel_contant">
-            <span>Pakkasuran Malai</span>, also known as Droog Fort, is a
-            historic site located near Coonoor in the Nilgiris district of Tamil
-            Nadu. It’s about 15 kilometers from Coonoor and is known for its
-            scenic beauty and panoramic views1. The fort was used as an outpost
-            by Tipu Sultan in the 18th century, and today, it’s a popular spot
-            for trekking and sightseeing
+          <video
+            ref={videoRef}
+            src="https://lh3.googleusercontent.com/ggs/AF1QipOezG52n1o28P-cj1aAMBghH0RgBo0kAtljhC__=m18?cpn=GhwErVMktctn2xSd"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="hover-video"
+            muted
+            loop
+            controls
+            controlsList="nodownload"
+          ></video>
+          <h2 className="slide-container_titel">Pakkasuram malai</h2>
+          <p className="slide-container_titel_contant" ref={textRef}>
+            Pakkasuran Malai also known as Droog Fort, is a historic site
+            located near Coonoor in the Nilgiris district of Tamil Nadu. It’s
+            about 15 kilometers from Coonoor and is known for its scenic beauty
+            and panoramic views1. The fort was used as an outpost by Tipu Sultan
+            in the 18th century, and today, it’s a popular spot for trekking and
+            sightseeing
           </p>
+
+          <button onClick={speakText} className="slide-container_btn"><FaMicrophone/>{isSpeaking ? "Stop" : "Speak"}</button>
         </div>
         <div>
           <Slide>
