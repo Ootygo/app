@@ -8,6 +8,7 @@ import Stay from './components/Stay';
 import Travel from './components/Travel';
 import Food from './components/Food';
 import SignUp from './components/SignUp';
+import ImageSlider from './components/sub components/ImageSlider';
 
 const App = () => {
  return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/Travel" element={<Travel/>} />
           <Route path="/Food" element={<Food/>} />
           <Route path="/SignUp" element={<SignUp/>} />
+          <Route path="/ImageSlider" element={<ImageSlider/>} />
        </Routes>
     </>
  );

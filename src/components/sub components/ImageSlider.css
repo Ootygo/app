@@ -1,0 +1,54 @@
+.slide-container{
+    z-index: -2;
+    background-color: black;
+    color: white;
+    margin-top: 100px;
+    padding: 10px;
+}
+.video-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: fit-content;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  .hover-video {
+    width: 50%;
+    position: relative; /* Adjust as needed */
+    transition: 0.9 ease;
+    opacity: 0.9;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .hover-video:hover {
+    opacity: 1; /* Dim the video on hover */
+    transform: scale(1.05);
+    transition: 1s;
+  }
+  .slide-container_titel{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(128, 128, 128, 0.479);
+    padding:10px;
+    border-radius: 5px;
+  }
+  .slide-container>p{
+    margin: 20px;
+    font-size: 20px;
+    text-indent: 20px;
+  }
+  .slide-container_titel_contant{
+    text-indent: 20px;
+  }
+  .slide-container_titel_contant>span{
+    font-weight: 700;
+  }
