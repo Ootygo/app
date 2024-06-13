@@ -61,14 +61,15 @@ const ImageSlider = () => {
     } else {
       // Otherwise, start speaking
       const utterance = new SpeechSynthesisUtterance(
-        textRef.current.__reactProps$sfcc15u06mb.children
+        textRef.current.textContent
       );
       utterance.onend = () => setIsSpeaking(false);
       speechSynthesisRef.current.speak(utterance);
       setIsSpeaking(true);
     }
+    
   };
-
+  
   return (
     <>
       <Navbar />
@@ -82,7 +83,7 @@ const ImageSlider = () => {
             className="hover-video"
             muted
             loop
-            controls
+            
             controlsList="nodownload"
           ></video>
           <h2 className="slide-container_titel">Pakkasuram malai</h2>
