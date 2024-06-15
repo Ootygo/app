@@ -67,6 +67,9 @@
     transition: ease-in 0.5s;
 
   }
+  .Slide_container_img_slide{
+    z-index:-2;
+  }
   @media only screen and (max-width :900px){
     .slide-container{
       margin-top: 80px;

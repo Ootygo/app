@@ -1,6 +1,5 @@
 
 import './App.css';
-// App.js
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Places from './components/Places';
@@ -9,10 +8,13 @@ import Travel from './components/Travel';
 import Food from './components/Food';
 import SignUp from './components/SignUp';
 import ImageSlider from './components/sub components/ImageSlider';
+import SimsPark from './components/sub components/SimsPark';
+import DolphinNose from './components/sub components/DolphinNose';
 
 const App = () => {
  return (
     <>
+    
        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Places" element={<Places />} />
@@ -20,8 +22,12 @@ const App = () => {
           <Route path="/Travel" element={<Travel/>} />
           <Route path="/Food" element={<Food/>} />
           <Route path="/SignUp" element={<SignUp/>} />
+          <Route path="/SimsPark" element={<SimsPark/>} />
+          <Route path="/DolphinNone" element={<DolphinNose/>}/>
           <Route path="/ImageSlider" element={<ImageSlider/>} />
+           
        </Routes>
+       
     </>
  );
 };

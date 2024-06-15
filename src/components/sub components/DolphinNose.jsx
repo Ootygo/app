@@ -1,14 +1,17 @@
 import React from "react";
-import { Slide } from "react-slideshow-image";
-import "react-slideshow-image/dist/styles.css";
-import "./ImageSlider.css";
 import Navbar from "../../page/Navbar";
 import Footer from "../../page/Footer";
-import { useRef, useState } from "react";
+import "react-slideshow-image/dist/styles.css";
+import "./ImageSlider.css";
+import { Slide } from "react-slideshow-image";
+import { useState, useRef } from "react";
 import { FaMicrophone } from "react-icons/fa";
 
-
-
+const spanStyle = {
+  padding: "20px",
+  // background: '#efefef',
+  color: "#fffff",
+};
 
 const divStyle = {
   display: "flex",
@@ -33,9 +36,9 @@ const slideImages = [
   },
 ];
 
-const ImageSlider = () => {
-  const videoRef = useRef(null);
+function SimsPark(){
 
+  const videoRef = useRef(null);
   const handleMouseEnter = () => {
     videoRef.current.play();
   };
@@ -44,7 +47,6 @@ const ImageSlider = () => {
     videoRef.current.pause();
     videoRef.current.currentTime = 0; // Optional: Reset video to start
   };
-
   const [isSpeaking, setIsSpeaking] = useState(false);
   const textRef = useRef(null);
   const speechSynthesisRef = useRef(window.speechSynthesis);
@@ -65,6 +67,7 @@ const ImageSlider = () => {
     }
     
   };
+  
   
   return (
     <>
@@ -94,8 +97,8 @@ const ImageSlider = () => {
 
           <button onClick={speakText} className="slide-container_btn"><FaMicrophone/>{isSpeaking ? "Stop" : "Speak"}</button>
         </div>
-        <div >
-          <Slide className="Slide_container_img_slide">
+        <div>
+          <Slide>
             {slideImages.map((slideImage, index) => (
               <div key={index}>
                 <div
@@ -104,16 +107,18 @@ const ImageSlider = () => {
                     backgroundImage: `url(${slideImage.url})`,
                   }}
                 >
-                  
+                  <span style={spanStyle}>{slideImage.caption}</span>
                 </div>
               </div>
             ))}
           </Slide>
         </div>
       </div>
+      
+     
       <Footer />
     </>
   );
 };
 
-export default ImageSlider;
+export default SimsPark;

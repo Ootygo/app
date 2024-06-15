@@ -1,12 +1,11 @@
 import React from "react";
-import { Slide } from "react-slideshow-image";
-import "react-slideshow-image/dist/styles.css";
-import "./ImageSlider.css";
 import Navbar from "../../page/Navbar";
 import Footer from "../../page/Footer";
-import { useRef, useState } from "react";
+import "react-slideshow-image/dist/styles.css";
+import "./ImageSlider.css";
+import { Slide } from "react-slideshow-image";
+import { useState, useRef } from "react";
 import { FaMicrophone } from "react-icons/fa";
-
 
 
 
@@ -20,22 +19,21 @@ const divStyle = {
 };
 const slideImages = [
   {
-    url: "https://th-i.thgim.com/public/incoming/ikj0uh/article67079650.ece/alternates/FREE_1200/10214_14_7_2023_14_46_23_1_IMG_20230714_WA0015.JPG",
+    url: "",
     caption: "Slide 1",
   },
   {
-    url: "https://static.wixstatic.com/media/32dd65_463bc513bb134caea7cf31bea48bef8e~mv2.jpg/v1/fit/w_680,h_510,q_90/32dd65_463bc513bb134caea7cf31bea48bef8e~mv2.jpg",
+    url: "",
     caption: "Slide 2",
   },
   {
-    url: "https://c4.wallpaperflare.com/wallpaper/844/138/418/yellow-cosmos-flowers-in-bloom-close-up-photo-wallpaper-preview.jpg",
+    url: "",
     caption: "Slide 3",
   },
 ];
 
-const ImageSlider = () => {
+function SimsPark() {
   const videoRef = useRef(null);
-
   const handleMouseEnter = () => {
     videoRef.current.play();
   };
@@ -44,7 +42,6 @@ const ImageSlider = () => {
     videoRef.current.pause();
     videoRef.current.currentTime = 0; // Optional: Reset video to start
   };
-
   const [isSpeaking, setIsSpeaking] = useState(false);
   const textRef = useRef(null);
   const speechSynthesisRef = useRef(window.speechSynthesis);
@@ -63,9 +60,8 @@ const ImageSlider = () => {
       speechSynthesisRef.current.speak(utterance);
       setIsSpeaking(true);
     }
-    
   };
-  
+
   return (
     <>
       <Navbar />
@@ -73,29 +69,30 @@ const ImageSlider = () => {
         <div className="video-container">
           <video
             ref={videoRef}
-            src="https://lh3.googleusercontent.com/ggs/AF1QipOezG52n1o28P-cj1aAMBghH0RgBo0kAtljhC__=m18?cpn=GhwErVMktctn2xSd"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            src="https://lh3.googleusercontent.com/ggs/AF1QipNXjHxTzcxyqeEIAVc1Aou-XOHyPX6CzhC2UEnC=m18?cpn=dEbCFKes6PUcJ4vZ"
             className="hover-video"
             muted
             loop
-            
             controlsList="nodownload"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           ></video>
-          <h2 className="slide-container_titel">Pakkasuram malai</h2>
+          <h2 className="slide-container_titel">Smis Park</h2>
           <p className="slide-container_titel_contant" ref={textRef}>
-            Pakkasuran Malai also known as Droog Fort, is a historic site
-            located near Coonoor in the Nilgiris district of Tamil Nadu. It’s
-            about 15 kilometers from Coonoor and is known for its scenic beauty
-            and panoramic views1. The fort was used as an outpost by Tipu Sultan
-            in the 18th century, and today, it’s a popular spot for trekking and
-            sightseeing
+            Sim’s Park in Coonoor is a beautiful botanical garden and a popular
+            tourist attraction. The park is home to over 1000 species of colorful
+            and vibrant flowers and is divided into several sections, including
+            a small Lily pond, a rose garden, a boating area, and an area for
+            flowering plants.
           </p>
 
-          <button onClick={speakText} className="slide-container_btn"><FaMicrophone/>{isSpeaking ? "Stop" : "Speak"}</button>
+          <button onClick={speakText} className="slide-container_btn">
+            <FaMicrophone />
+            {isSpeaking ? "Stop" : "Speak"}
+          </button>
         </div>
-        <div >
-          <Slide className="Slide_container_img_slide">
+        <div>
+          <Slide>
             {slideImages.map((slideImage, index) => (
               <div key={index}>
                 <div
@@ -111,9 +108,10 @@ const ImageSlider = () => {
           </Slide>
         </div>
       </div>
+
       <Footer />
     </>
   );
-};
+}
 
-export default ImageSlider;
+export default SimsPark;
