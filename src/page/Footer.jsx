@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -40,9 +41,12 @@ function Footer() {
           <div className="Footer_email">
             <h2 className="Footer_email_title">Email Us</h2>
             <div>
-              <h3>ootygo.official@gmail.com</h3>
-              <h3>admin@ootygo.in</h3>
+              <h4>ootygo.official@gmail.com</h4>
+              <h4>admin@ootygo.in</h4>
               <h4>© 2023, Ootygo Technologies</h4>
+              <Link to="/About">
+              <h6>About Us</h6>
+              </Link>
             </div>
           </div>
         </div>

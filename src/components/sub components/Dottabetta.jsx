@@ -7,12 +7,6 @@ import { Slide } from "react-slideshow-image";
 import { useState, useRef } from "react";
 import { FaMicrophone } from "react-icons/fa";
 
-const spanStyle = {
-  padding: "20px",
-  // background: '#efefef',
-  color: "#fffff",
-};
-
 const divStyle = {
   display: "flex",
   alignItems: "flex end",
@@ -23,20 +17,20 @@ const divStyle = {
 };
 const slideImages = [
   {
-    url: "https://lh5.googleusercontent.com/p/AF1QipPofXqFVd5itArzVYyoK1kcWeukLuktpMoZH5FC=w203-h152-k-no",
+    url: "https://lh5.googleusercontent.com/p/AF1QipOUqgLtDj7PR979FcXTbLJR_PEfe5-vwEvx1zAa=s917-k-no",
     caption: "Slide 1",
   },
   {
-    url: "https://lh5.googleusercontent.com/p/AF1QipP6IFGXM4Qqbezt6lBsfmeGe27xE8ZKkyy7jVuG=w203-h151-k-no",
+    url: "https://lh5.googleusercontent.com/p/AF1QipMUmgjAdu5Tf8lqnveIaDz6q6DixrPEC7wlNtsc=w221-h100-k-no",
     caption: "Slide 2",
   },
   {
-    url: "",
+    url: "https://lh5.googleusercontent.com/p/AF1QipNQ_mbqzSdzukNN9vpT1FFk3jnl_Go7wcAzKMdi=w203-h114-k-no",
     caption: "Slide 3",
   },
 ];
 
-function SimsPark() {
+function Dottabetta() {
   const videoRef = useRef(null);
   const handleMouseEnter = () => {
     videoRef.current.play();
@@ -73,22 +67,21 @@ function SimsPark() {
         <div className="video-container">
           <video
             ref={videoRef}
-            src="https://lh3.googleusercontent.com/ggs/AF1QipPH_ZgUpjkIwf9Bqj_GYftkygqYbUpMnV-LEdTM=m18?cpn=JxWvwK_yDIYolK3U"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            src="https://lh3.googleusercontent.com/ggs/AF1QipMRuxMh8_njzYiEjjdgY45HIIy_MHWNnrETgzWN=m18?cpn=DIciR8MDPKEyPxMb"
             className="hover-video"
             muted
             loop
             controlsList="nodownload"
-            
-          
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           ></video>
-          <h2 className="slide-container_titel">Dolphin Nose</h2>
+          <h2 className="slide-container_titel">Doddabeta view point</h2>
           <p className="slide-container_titel_contant" ref={textRef}>
-            Dolphin’s Nose is a popular viewpoint located in Coonoor, Tamil
-            Nadu. It provides a spectacular panoramic view of the surrounding
-            hills and valleys, with the Catherine Falls visible in the distance.
-            The viewpoint is shaped like a dolphin’s nose, hence the name.
+            Doddabetta is the highest mountain in the Nilgiri Hills, at 2,637
+            metres (8,652 feet). It’s located around 9 km from Ooty, in the
+            state of Tamil Nadu. The Doddabetta Viewpoint offers a beautiful
+            panoramic view of the Nilgiris and is a popular spot for photography
+            and sightseeing.
           </p>
 
           <button onClick={speakText} className="slide-container_btn">
@@ -104,11 +97,9 @@ function SimsPark() {
                   style={{
                     ...divStyle,
                     backgroundImage: `url(${slideImage.url})`,
-                    backgroundPosition:`center`,
+                    backgroundPosition: `center`,
                   }}
-                >
-                  <span style={spanStyle}>{slideImage.caption}</span>
-                </div>
+                ></div>
               </div>
             ))}
           </Slide>
@@ -120,4 +111,4 @@ function SimsPark() {
   );
 }
 
-export default SimsPark;
+export default Dottabetta;

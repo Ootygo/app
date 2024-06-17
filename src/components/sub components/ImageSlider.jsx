@@ -20,7 +20,7 @@ const divStyle = {
 };
 const slideImages = [
   {
-    url: "https://th-i.thgim.com/public/incoming/ikj0uh/article67079650.ece/alternates/FREE_1200/10214_14_7_2023_14_46_23_1_IMG_20230714_WA0015.JPG",
+    url: "https://lh5.googleusercontent.com/p/AF1QipOSEMZpTy8qQZxmcFf7mxwD_tEIBcuofieWJrJb=s642-k-no",
     caption: "Slide 1",
   },
   {
@@ -42,7 +42,7 @@ const ImageSlider = () => {
 
   const handleMouseLeave = () => {
     videoRef.current.pause();
-    videoRef.current.currentTime = 0; // Optional: Reset video to start
+    // videoRef.current.currentTime = 0; // Optional: Reset video to start
   };
 
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -102,6 +102,7 @@ const ImageSlider = () => {
                   style={{
                     ...divStyle,
                     backgroundImage: `url(${slideImage.url})`,
+                    backgroundPosition: `center`,
                   }}
                 >
                   

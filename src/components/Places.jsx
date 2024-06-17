@@ -5,6 +5,8 @@ import "./Places.css";
 import { Link } from "react-router-dom";
 import "../components/sub components/ImageSlider";
 import "../components/sub components/SimsPark";
+import "../components/sub components/KodanadView"
+import "../components/sub components/Dottabetta"
 
 export default function Places() {
   return (
@@ -41,6 +43,7 @@ export default function Places() {
           </div>
           <h3 className="Places_contant_sub">Smis Park</h3>
         </div>
+
         <div>
           <div className="Place_contant_place">
             <Link to="/DolphinNone">
@@ -54,45 +57,49 @@ export default function Places() {
           </div>
           <h3 className="Places_contant_sub">Dolphin Nose</h3>
         </div>
+        
         <div>
           <div className="Place_contant_place">
-            <Link to="/ImageSlider">
+            <Link to="/KodanadView">
               <img
                 className="Place_contant_img"
-                src="https://lh5.googleusercontent.com/p/AF1QipPhZFrA0JgCbKCxDHJStQucfFSnSNZwG7goLUcH=w203-h152-k-no"
+                src="https://lh5.googleusercontent.com/p/AF1QipN-C95XwK6aLoNqswOvANE3-9udO6GRkY_3wWXb=w203-h152-k-no"
                 alt="img"
               />
             </Link>
             <span className="Places_contant_counts">4</span>
           </div>
-          <h3 className="Places_contant_sub">Pakkasuran malai View </h3>
+          <h3 className="Places_contant_sub">Kodanad View Point</h3>
         </div>
+
         <div>
           <div className="Place_contant_place">
-            <Link to="/ImageSlider">
+            <Link to="/Dottabetta">
               <img
                 className="Place_contant_img"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTP4KyHavTvldxZg_XFcvxWV0Y2tpgX62_2w&usqp=CAU"
+                src="https://lh5.googleusercontent.com/p/AF1QipPjBtIwEU1uFVsTdRNgRWHoP4YApZiIafMO9c7S=w203-h151-k-no"
                 alt="img"
               />
             </Link>
             <span className="Places_contant_counts">5</span>
           </div>
-          <h3 className="Places_contant_sub">Pakkasuran malai View </h3>
+          <h3 className="Places_contant_sub">Doddabetta Peak</h3>
         </div>
+
         <div>
           <div className="Place_contant_place">
-            <Link to="/ImageSlider">
+            <Link to="/BotanicalGarden">
               <img
                 className="Place_contant_img"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTP4KyHavTvldxZg_XFcvxWV0Y2tpgX62_2w&usqp=CAU"
+                src="https://lh5.googleusercontent.com/p/AF1QipOH4_jJAAQKCG02x9tTSgoop_wFUkJggVEfIsBb=w203-h152-k-no"
                 alt="img"
               />
             </Link>
             <span className="Places_contant_counts">6</span>
           </div>
-          <h3 className="Places_contant_sub">Pakkasuran malai View </h3>
+          <h3 className="Places_contant_sub">Botanical Garden</h3>
         </div>
+
         <div>
           <div className="Place_contant_place">
             <Link to="/ImageSlider">
@@ -106,6 +113,7 @@ export default function Places() {
           </div>
           <h3 className="Places_contant_sub">Pakkasuran malai View </h3>
         </div>
+
         <div>
           <div className="Place_contant_place">
             <Link to="/ImageSlider">
@@ -119,6 +127,7 @@ export default function Places() {
           </div>
           <h3 className="Places_contant_sub">Pakkasuran malai View </h3>
         </div>
+
         <div>
           <div className="Place_contant_place">
             <Link to="/ImageSlider">
@@ -132,6 +141,7 @@ export default function Places() {
           </div>
           <h3 className="Places_contant_sub">Pakkasuran malai View </h3>
         </div>
+
         <div>
           <div className="Place_contant_place">
             <Link to="/ImageSlider">

@@ -1,5 +1,5 @@
 .Travel_contant {
-  margin-top: 100px;
+  margin-top: 95px;
   width: 100%;
   min-height: 600px;
   max-height: fit-content;
@@ -8,7 +8,7 @@
 }
 .Travel_contant_title {
   color: white;
-  padding: 20px;
+  padding: 5px;
   background-color: rgba(128, 128, 128, 0.479);
   border-radius: 10px;
   width: fit-content;
@@ -61,7 +61,7 @@
 }
 @media only screen and (max-width: 900px) {
   .Travel_contant {
-    margin-top: 80px;
+    margin-top: 75px;
   }
   .Travel_contant_title {
     font-size: 15px;

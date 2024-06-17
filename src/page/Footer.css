@@ -41,7 +41,12 @@
     justify-content: center;
     gap: 50px;
 }
-
+.Footer_email>div>h4,h6{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    text-decoration-line: none;
+}
 .Footer_email_title{
     text-decoration: underline;
 }

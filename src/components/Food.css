@@ -1,6 +1,6 @@
 .Food_contant{
     width: 100%;
-    margin-top: 100px;
+    margin-top: 90px;
     font-family: "Poppins", sans-serif;
     height: auto;
     background-color: black;
@@ -23,9 +23,9 @@
 #Food_contant_title{
     background-color: rgba(128, 128, 128, 0.479);
     width: fit-content;
-    padding: 8px;
+    padding: 5px;
     border-radius: 10px;
-    margin-left: 10px;
+    margin-left: 30px;
     color: white;
 }
 .Food_contant_Item_title{
@@ -46,9 +46,17 @@
 }
 @media only screen and (max-width :900px){
     .Food_contant{
-        margin-top: 80px;
+        margin-top: 75px;
     }
     .Food_contant_title{
         font-size: 8px;
+    }
+    .Food_contant_items{
+        
+        margin: 5px;
+    }
+    .Food_contant_item{
+        
+        margin: 5px;
     }
 }

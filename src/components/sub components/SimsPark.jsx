@@ -19,15 +19,15 @@ const divStyle = {
 };
 const slideImages = [
   {
-    url: "",
+    url: "https://www.ootyindia.com/pictures/travel/sims-park-15.jpeg",
     caption: "Slide 1",
   },
   {
-    url: "",
+    url: "https://www.karthitravels.com/images/new/coonoor/simspark4.jpg",
     caption: "Slide 2",
   },
   {
-    url: "",
+    url: "https://media1.thrillophilia.com/filestore/d86d5oth982orkcpj7n7wb7y7lwu_1556094772_shutterstock_454025866.jpg?w=400&dpr=2",
     caption: "Slide 3",
   },
 ];
@@ -40,7 +40,7 @@ function SimsPark() {
 
   const handleMouseLeave = () => {
     videoRef.current.pause();
-    videoRef.current.currentTime = 0; // Optional: Reset video to start
+    // videoRef.current.currentTime = 0; // Optional: Reset video to start
   };
   const [isSpeaking, setIsSpeaking] = useState(false);
   const textRef = useRef(null);
@@ -99,6 +99,7 @@ function SimsPark() {
                   style={{
                     ...divStyle,
                     backgroundImage: `url(${slideImage.url})`,
+                    backgroundPosition:`center`,
                   }}
                 >
                   

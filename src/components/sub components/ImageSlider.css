@@ -33,6 +33,7 @@
     transform: scale(1.05);
     transition: 1s;
   }
+
   .slide-container_titel{
     position: absolute;
     top: 20px;
