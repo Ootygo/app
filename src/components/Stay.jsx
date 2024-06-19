@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Stay.css';
 import Navbar from "../page/Navbar";
 import Footer from "../page/Footer";
 
+
 export default function Stay() {
+    useEffect(()=>{window.scrollTo(0, 0);},[]);
+
     return (
         <>
             <Navbar />

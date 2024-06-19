@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import { Amplify } from "aws-amplify";
@@ -8,7 +9,11 @@ import Navbar from "../page/Navbar";
 import Footer from "../page/Footer";
 Amplify.configure(awsExports);
 
+
 export default function SignUp() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
      
   return (
     <>

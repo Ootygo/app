@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../page/Navbar";
 import Footer from "../../page/Footer";
 import "react-slideshow-image/dist/styles.css";
 import "./ImageSlider.css";
 import { Slide } from "react-slideshow-image";
-import { useState, useRef } from "react";
+import { useState, useRef} from "react";
 import { FaMicrophone } from "react-icons/fa";
 
 const divStyle = {
@@ -31,6 +31,11 @@ const slideImages = [
 ];
 
 function Dottabetta() {
+
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[]);
+
   const videoRef = useRef(null);
   const handleMouseEnter = () => {
     videoRef.current.play();

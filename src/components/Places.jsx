@@ -5,10 +5,18 @@ import "./Places.css";
 import { Link } from "react-router-dom";
 import "../components/sub components/ImageSlider";
 import "../components/sub components/SimsPark";
-import "../components/sub components/KodanadView"
-import "../components/sub components/Dottabetta"
+import "../components/sub components/KodanadView";
+import "../components/sub components/Dottabetta";
+import "../components/sub components/OotyBoatHouse";
+import { useEffect } from 'react';
+
 
 export default function Places() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <>
       <div>
@@ -102,16 +110,16 @@ export default function Places() {
 
         <div>
           <div className="Place_contant_place">
-            <Link to="/ImageSlider">
+            <Link to="/OotyBoatHouse">
               <img
                 className="Place_contant_img"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTP4KyHavTvldxZg_XFcvxWV0Y2tpgX62_2w&usqp=CAU"
+                src="https://lh5.googleusercontent.com/p/AF1QipPINTGLkf0trqBTO3HJIZ9EfmkyG_wI3v0h_fau=w203-h114-k-no"
                 alt="img"
               />
             </Link>
             <span className="Places_contant_counts">7</span>
           </div>
-          <h3 className="Places_contant_sub">Pakkasuran malai View </h3>
+          <h3 className="Places_contant_sub">Ooty boat house</h3>
         </div>
 
         <div>
@@ -161,4 +169,4 @@ export default function Places() {
       </div>
     </>
   );
-}
+};

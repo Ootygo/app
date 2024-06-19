@@ -7,8 +7,12 @@ import image4 from "../assets/images/ruban.png";
 import image5 from "../assets/images/guru.png";
 import Navbar from "../page/Navbar";
 import Footer from "../page/Footer";
+import { useEffect } from "react";
 
 function About() {
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[]);
   return (
     <>
       <Navbar />

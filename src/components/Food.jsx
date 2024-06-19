@@ -1,9 +1,13 @@
 import Footer from "../page/Footer";
 import Navbar from "../page/Navbar";
 import "./Food.css";
+import { useEffect } from "react";
 
 
 export default function Food() {
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[]);
     return (
         <>
             <div>

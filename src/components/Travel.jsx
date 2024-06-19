@@ -2,8 +2,10 @@ import React from "react";
 import "./Travel.css";
 import Navbar from "../page/Navbar";
 import Footer from "../page/Footer";
+import { useEffect } from "react";
 
 export default function Travel() {
+  useEffect(()=>{window.scrollTo(0, 0);},[]);
   return (
     <>
       <Navbar />
