@@ -15,6 +15,7 @@ import Dottabetta from "./components/sub components/Dottabetta";
 import BotanicalGarden from "./components/sub components/BotanicalGarden";
 import About from "./components/About";
 import OotyBoatHouse from "./components/sub components/OotyBoatHouse";
+import KateriPark from "./components/sub components/KateriPark";
 
 const App = () => {
   return (
@@ -36,6 +37,8 @@ const App = () => {
         <Route path="/BotanicalGarden" element={<BotanicalGarden />} />
         <Route path="/About" element={<About />} />
         <Route path="/OotyBoatHouse" element={<OotyBoatHouse />} />
+        <Route path="/KateriPark" element={<KateriPark />} />
+
         </Routes>
       
     </>

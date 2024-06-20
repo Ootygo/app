@@ -9,15 +9,12 @@
     padding: 10px;
     border-radius: 10px;
 }
-
-
-.About_Team_member:hover{
-    background-color: rgba(6, 132, 210, 0.88);
-    color: white;
-    transition: 0.3s;
-    cursor: pointer;
-    transition-timing-function: ease;
+.About_ootygo{
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
 }
+
 .About_Team_member>img,h2{
     align-items: center;
     align-content: center;
@@ -46,4 +43,18 @@
 }
 .About_ootygo>p{
    text-indent: 20px;
+}
+.About_tec_icon{
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   gap: 20px;
+   margin: 10px;
+}
+.About_tec{
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
 }

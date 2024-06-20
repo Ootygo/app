@@ -8,6 +8,7 @@ import "../components/sub components/SimsPark";
 import "../components/sub components/KodanadView";
 import "../components/sub components/Dottabetta";
 import "../components/sub components/OotyBoatHouse";
+import "../components/sub components/KateriPark";
 import { useEffect } from 'react';
 
 
@@ -124,16 +125,16 @@ export default function Places() {
 
         <div>
           <div className="Place_contant_place">
-            <Link to="/ImageSlider">
+            <Link to="/KateriPark">
               <img
                 className="Place_contant_img"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTP4KyHavTvldxZg_XFcvxWV0Y2tpgX62_2w&usqp=CAU"
+                src="https://lh5.googleusercontent.com/p/AF1QipNfddUt-9Ko0Brcjkfq4CDnMVqkvKes1WbOSEaS=w203-h152-k-no"
                 alt="img"
               />
             </Link>
             <span className="Places_contant_counts">8</span>
           </div>
-          <h3 className="Places_contant_sub">Pakkasuran malai View </h3>
+          <h3 className="Places_contant_sub">Kateri Park</h3>
         </div>
 
         <div>
