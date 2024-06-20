@@ -1,6 +1,7 @@
 .Signup_contant{
   margin-top: 100px;
-  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 100%;
   background-color: black;
   color: white;
@@ -8,6 +9,7 @@
 @media only screen and (max-width :900px) {
   .Signup_contant{
     margin-top: 80px;
+    padding-top: 50px;
    
   }
 }

@@ -2,6 +2,29 @@
     margin-top: 95px;
 
 }
+.About_Team_member{
+    max-width: 600px;
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.About_Team_member:hover{
+    background-color: rgba(6, 132, 210, 0.88);
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+    transition-timing-function: ease;
+}
+.About_Team_member>img,h2{
+    align-items: center;
+    align-content: center;
+}
+.About_Team_member>p{
+    text-indent: 20px;
+}
 .About_img{
     width: 200px;
     height: 200px;

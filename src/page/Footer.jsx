@@ -9,7 +9,10 @@ function Footer() {
         <div className="Footer_contant">
           <span className="Footer_contact_title">Follow Us On</span>
           <div className="Footer_social">
-            <a href="https://instagram.com/ootygo?utm_source=qr&igshid=OGIxMTE0OTdkZA==" className="Footer_icons">
+            <a
+              href="https://instagram.com/ootygo?utm_source=qr&igshid=OGIxMTE0OTdkZA=="
+              className="Footer_icons"
+            >
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +26,10 @@ function Footer() {
                 </svg>
               </span>
             </a>
-            <a href="https://youtube.com/@ootygo?si=osDLPHE7mLyxWtAa" className="Footer_icons">
+            <a
+              href="https://youtube.com/@ootygo?si=osDLPHE7mLyxWtAa"
+              className="Footer_icons"
+            >
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -40,12 +46,13 @@ function Footer() {
           </div>
           <div className="Footer_email">
             <h2 className="Footer_email_title">Email Us</h2>
-            <div>
-              <h4>ootygo.official@gmail.com</h4>
-              <h4>admin@ootygo.in</h4>
+            <div className="Footer_email_contant">
+              <h4 itemType="Email">ootygo.official@gmail.com</h4>
+              <h4 itemType="Email">admin@ootygo.in</h4>
               <h4>© 2023, Ootygo Technologies</h4>
+
               <Link to="/About">
-              <h6>About Us</h6>
+                <h4>About Us</h4>
               </Link>
             </div>
           </div>

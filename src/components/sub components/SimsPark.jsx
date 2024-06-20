@@ -34,7 +34,7 @@ const slideImages = [
 
 function SimsPark() {
   useEffect(()=>{
-    window.scroolTp(0, 0);
+    window.scrollTo(0, 0);
   },[]);
 
   const videoRef = useRef(null);

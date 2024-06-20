@@ -1,75 +1,79 @@
-.Footer{
-    width: 100%;
-    height: 290px;
-    background-color: black;
-    margin-bottom: 0;
-    font-family: "Poppins", sans-serif;
+.Footer {
+  width: 100%;
+  height: 290px;
+  background-color: black;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
 }
-.Footer_contact_title{
-    color: white;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    text-decoration: underline;
-    margin-bottom: 20px;
+.Footer_contact_title {
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+  margin-bottom: 20px;
 }
-.Footer_social{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;  
-    
+.Footer_social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
-.Footer_icon{
-    height: 50px;
-    border-radius: 20px;
+.Footer_icon {
+  height: 50px;
+  border-radius: 20px;
 }
-.Footer_icons{
-    text-decoration: unset;
-    color: white;
+.Footer_icons {
+  text-decoration: unset;
+  color: white;
 }
-.Footer_icons:hover{
-    cursor: pointer;
-    color: rgb(27, 203, 238);
-    transform: scale(1.2);
-    transition: 0.5s;
+.Footer_icons:hover {
+  cursor: pointer;
+  color: rgb(27, 203, 238);
+  transform: scale(1.2);
+  transition: 0.5s;
 }
-.Footer_email{
-    font-weight: 100;
-    color: white;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
+.Footer_email {
+  font-weight: 100;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  
 }
-.Footer_email>div>h4,h6{
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-    text-decoration-line: none;
+.Footer_email > div > h4{
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  text-decoration-line: none;
 }
-.Footer_email_title{
-    text-decoration: underline;
+.Footer_email_title {
+  text-decoration: underline;
+}
+.Footer_email_contant{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 
-@media only screen and (max-width :900px){
-    .Footer_contact_title{
-
-        font-size: 20px;
-
-    }
-.Footer_email{
-
+@media only screen and (max-width: 900px) {
+  .Footer_contact_title {
+    font-size: 20px;
+  }
+  .Footer_email {
     font-size: 10px;
     flex-wrap: wrap;
-    width: 200px;
     gap: 10px;
-    margin-left: 100px;
-}
-.Footer_icon{
+  }
+  .Footer_icon {
     height: 30px;
-    
-}
-
-
+  }
+  .Footer_email_contant{
+    margin: 20px;
+    gap: 5px;
+  }
 }
