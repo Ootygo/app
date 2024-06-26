@@ -1,18 +1,18 @@
 .Timebar_contant{
-  margin-top: 85px;
+  margin-top: 0px;
   /* background-color: black; */
   display: flex;
   justify-content: center;
   align-items: center;  
   justify-items: center;
   align-content: center;
-  padding: 5px;
+ 
   font-family: "Poppins", sans-serif;
 }
 
 .Timebar_time_1{
     color: aliceblue;
-    background-color:rgba(0, 0, 0, 0.325);
+    background-color:rgba(159, 157, 157, 0.697);
     padding: 10px;
     border-radius:  10px 0 0 10px;
     font-weight: 400;
@@ -20,7 +20,7 @@
 }
 .Timebar_time_2{
     color: aliceblue;
-    background-color: rgba(0, 0, 0, 0.325);
+    background-color:rgba(159, 157, 157, 0.697);
     padding: 10px;
     border-radius: 0 10px 10px 0;
     font-family: "Poppins", sans-serif;
@@ -33,7 +33,7 @@
 }
 .Timebar_time_3{
   color: #fdfafa;
-  background-color: rgba(0, 0, 0, 0.325);
+  background-color:rgba(159, 157, 157, 0.697);
   border-radius: 10px;
   padding: 10px;
   font-family: "Poppins", sans-serif;
@@ -43,7 +43,7 @@
 
 @media only screen and (max-width :900px){
     .Timebar_contant{
-        margin-top: 75px;
+        margin-top: 0px;
 
 
     }

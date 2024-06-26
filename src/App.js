@@ -1,5 +1,5 @@
 import "./App.css";
-import {Route,Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Home from "./components/Home";
 import Places from "./components/Places";
@@ -16,31 +16,31 @@ import BotanicalGarden from "./components/sub components/BotanicalGarden";
 import About from "./components/About";
 import OotyBoatHouse from "./components/sub components/OotyBoatHouse";
 import KateriPark from "./components/sub components/KateriPark";
+import IdleTimerComponent from "./components/IdleTimerComponent";
 
 const App = () => {
   return (
     <>
-      
-      
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/Places" element={<Places />} />
-        <Route path="/Stay" element={<Stay />} />
-        <Route path="/Travel" element={<Travel />} />
-        <Route path="/Food" element={<Food />} />
-        <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/SimsPark" element={<SimsPark />} />
-        <Route path="/DolphinNone" element={<DolphinNose />} />
-        <Route path="/ImageSlider" element={<ImageSlider />} />
-        <Route path="/KodanadView" element={<KodanadView />} />
-        <Route path="/Dottabetta" element={<Dottabetta />} />
-        <Route path="/BotanicalGarden" element={<BotanicalGarden />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/OotyBoatHouse" element={<OotyBoatHouse />} />
-        <Route path="/KateriPark" element={<KateriPark />} />
-
+      <div>
+      <IdleTimerComponent />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/Places" element={<Places />} />
+          <Route path="/Stay" element={<Stay />} />
+          <Route path="/Travel" element={<Travel />} />
+          <Route path="/Food" element={<Food />} />
+          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/SimsPark" element={<SimsPark />} />
+          <Route path="/DolphinNone" element={<DolphinNose />} />
+          <Route path="/ImageSlider" element={<ImageSlider />} />
+          <Route path="/KodanadView" element={<KodanadView />} />
+          <Route path="/Dottabetta" element={<Dottabetta />} />
+          <Route path="/BotanicalGarden" element={<BotanicalGarden />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/OotyBoatHouse" element={<OotyBoatHouse />} />
+          <Route path="/KateriPark" element={<KateriPark />} />
         </Routes>
-      
+      </div>
     </>
   );
 };

@@ -1,28 +1,67 @@
-import React, { useEffect } from "react";
-import './Stay.css';
+import React, { useEffect, useState } from "react";
+import "./Stay.css";
 import Navbar from "../page/Navbar";
 import Footer from "../page/Footer";
+import AWS from "aws-sdk";
 
+AWS.config.update({
+  region: "ap-south-1",
+  accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+});
+
+const dynamoDB = new AWS.DynamoDB.DocumentClient();
 
 export default function Stay() {
-    useEffect(()=>{window.scrollTo(0, 0);},[]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-    return (
-        <>
-            <Navbar />
-            <div className="Stay_contant">
-                <h1 className="Stay_contant_title">Find best place to stay</h1>
-                <div className="Stay_contant_item">
-                    <div className="Stay_contant_items">
-                        <h2 className="Stay_contant_items_title">Hotel Blue Hills</h2>
-                        <img className="Stay_contant_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoP6rq-N1Dqbx7hZRvvIZN-EXnOilNUFoF2g&usqp=CAU" alt="Blue Hills Hotel" />
-                        <h3 className="Stay_contant_about">Hotel blue hills is a best place to stay in ooty, This hotel is one of the top most visited place in ooty.</h3>
-                    </div>
+  // Configure AWS SDK
 
-                </div>
+  const fetchData = async () => {
+    const params = {
+      TableName: "Ootygo-hotel",
+      
+    };
+
+    try {
+      const data = await dynamoDB.scan(params).promise();
+      return data.Items;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return [];
+    }
+  };
+
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      const fetchedItems = await fetchData();
+      setItems(fetchedItems);
+    };
+
+    fetchItems();
+  }, []);
+
+  return (
+    <>
+      <Navbar />
+      <div className="Stay_contant">
+        <h1 className="Stay_contant_title">Top 10 Hotels</h1>
+        <div className="Stay_contant_Hotels">
+          {items.slice(0, 10).map(({ name, imgurl, rate }, index) => (
+            <div key={index}>
+              <img src={imgurl} alt="test-img" className="Stay_hotel_img" />
+              <h3 className="Stay_hotel_title">{name}</h3>
+              <span>₹{rate}</span>
             </div>
-            
-            <Footer />
-        </>
-    )
+          ))}
+        </div>
+      </div>
+
+      <Footer />
+    </>
+  );
 }

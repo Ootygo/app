@@ -1,62 +1,55 @@
-.Stay_contant{
-    margin-top: 95px;
-    width: 100%;
-    min-height: 500px;
-    max-height: fit-content;
-    background-color: black;
-    font-family: "Poppins", sans-serif;
+.Stay_contant {
+  margin-top: 95px;
+  width: 100%;
+  min-height: 500px;
+  max-height: fit-content;
+  background-color: black;
+  font-family: "Poppins", sans-serif;
 }
-.Stay_contant_title{
+.Stay_contant_title {
+  color: white;
+  padding: 5px;
+  background-color: rgba(128, 128, 128, 0.479);
+  border-radius: 0 0 5px 5px;
+  width: fit-content;
+  margin-left: 30px;
+}
+.Stay_contant_Hotels {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+  color: white;
+}
+.Stay_hotel_title{
     color: white;
-    padding: 5px;
-    background-color: rgba(128, 128, 128, 0.479);
-    border-radius: 0 0 5px 5px;
-    width: fit-content;
-    margin-left: 30px;
 }
-.Stay_contant_item{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.Stay_contant_items{
-    max-width: 400px;
-}
-.Stay_contant_img{
-    height: 250px;
-    width: 350px;
-    border-radius: 10px;
+.Stay_hotel_img{
+    border-radius: 5px;
+    height: 200px;
+    width: 300px;
     cursor: pointer;
 }
-.Stay_contant_img:hover{
+.Stay_hotel_img:hover{
     transform: scale(1.1);
-    transition: 150ms;
+    transition: 0.3s;
+    
+    
 }
-.Stay_contant_items_title{
-    color: white;
+
+@media only screen and (max-width: 900px) {
+  .Stay_contant {
+    margin-top: 73px;
+  }
+  .Stay_contant_title {
+    font-size: 20px;
+    padding: 8px;
+    margin-left: 10px;
+  }
+  .Stay_hotel_img{
+   
+    height: 180px;
+    width: 250px;
 }
-.Stay_contant_about{
-    color: white;
-}
-@media only screen and (max-width :900px){
-    .Stay_contant{
-        margin-top: 73px;
-    }
-    .Stay_contant_title{
-        font-size: 20px;
-        padding: 8px;
-        margin-left: 10px;
-    }
-    .Stay_contant_img{
-        height: 200px;
-        width: 300px;
-        border-radius: 8px;
-    }
-    .Stay_contant_item{
-      
-        gap: 5px;
-    }
 }
