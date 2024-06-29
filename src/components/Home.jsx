@@ -21,7 +21,7 @@ function Home() {
             autoPlay
             width="100%"
             className="Home_video"
-            
+            speed="0.5"
           ></video>
           <h1 className="Home_video_titel">Welcome to Ooty</h1>
           <div className="gradient-overlay"></div>
