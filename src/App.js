@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import {Route, Routes } from "react-router-dom";
 
 import Home from "./components/Home";
 import Places from "./components/Places";
@@ -22,7 +22,8 @@ const App = () => {
   return (
     <>
       <div>
-      <IdleTimerComponent />
+        <IdleTimerComponent />
+
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/Places" element={<Places />} />

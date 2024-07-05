@@ -13,6 +13,7 @@
     "aws": "^0.0.3-2",
     "aws-amplify": "^6.3.4",
     "aws-sdk": "^2.1646.0",
+    "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "npm": "^10.5.2",
     "react": "^18.2.0",
@@ -25,6 +26,7 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",
     "react-slideshow-image": "^4.3.1",
+    "sitemap": "^8.0.0",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },

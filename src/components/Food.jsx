@@ -25,8 +25,7 @@ export default function Food() {
                                 The table faces a breathtaking panorama.
                                 Green hills stretch into the distance, creating a tranquil backdrop.
                                 Trees dot the landscape, adding to the natural beauty.
-                                A body of water—perhaps a river or lake—glistens under the overcast sky.
-                                Houses resembling cottages perch atop the distant hills.
+                                
                             </span>
                         </div>
                         <div className="Food_contant_items">
@@ -37,8 +36,7 @@ export default function Food() {
                                 The table faces a breathtaking panorama.
                                 Green hills stretch into the distance, creating a tranquil backdrop.
                                 Trees dot the landscape, adding to the natural beauty.
-                                A body of water—perhaps a river or lake—glistens under the overcast sky.
-                                Houses resembling cottages perch atop the distant hills.
+                                
                             </span>
                         </div>
                         <div className="Food_contant_items">
@@ -49,8 +47,7 @@ export default function Food() {
                                 The table faces a breathtaking panorama.
                                 Green hills stretch into the distance, creating a tranquil backdrop.
                                 Trees dot the landscape, adding to the natural beauty.
-                                A body of water—perhaps a river or lake—glistens under the overcast sky.
-                                Houses resembling cottages perch atop the distant hills.
+                                
                             </span>
                         </div>
                         <div className="Food_contant_items">
@@ -61,8 +58,7 @@ export default function Food() {
                                 The table faces a breathtaking panorama.
                                 Green hills stretch into the distance, creating a tranquil backdrop.
                                 Trees dot the landscape, adding to the natural beauty.
-                                A body of water—perhaps a river or lake—glistens under the overcast sky.
-                                Houses resembling cottages perch atop the distant hills.
+                                
                             </span>
                         </div>
                     </div>

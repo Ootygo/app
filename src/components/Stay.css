@@ -1,10 +1,12 @@
 .Stay_contant {
-  margin-top: 95px;
+  /* margin-top: 95px; */
+  padding-top: 5px;
   width: 100%;
   min-height: 500px;
   max-height: fit-content;
   background-color: black;
   font-family: "Poppins", sans-serif;
+  color: white;
 }
 .Stay_contant_title {
   color: white;
@@ -12,7 +14,7 @@
   background-color: rgba(128, 128, 128, 0.479);
   border-radius: 0 0 5px 5px;
   width: fit-content;
-  margin-left: 30px;
+  margin-left: 150px;
 }
 .Stay_contant_Hotels {
   display: flex;
@@ -40,7 +42,7 @@
 
 @media only screen and (max-width: 900px) {
   .Stay_contant {
-    margin-top: 73px;
+    margin-top: 60px;
   }
   .Stay_contant_title {
     font-size: 20px;

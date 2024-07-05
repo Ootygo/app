@@ -1,6 +1,7 @@
 .Food_contant{
     width: 100%;
-    margin-top: 90px;
+    /* margin-top: 90px; */
+    padding-top: 10px;
     font-family: "Poppins", sans-serif;
     height: auto;
     background-color: black;
@@ -9,31 +10,33 @@
 .Food_contant_item{
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
     justify-content: space-around;
     align-items: center;
+    margin-left: 50px;
     
 }
 .Food_contant_items{
     max-width: 200px;
     margin: 10px;
     cursor: pointer;
+    padding: 10px;
 }
 #Food_contant_title{
     background-color: rgba(128, 128, 128, 0.479);
     width: fit-content;
     padding: 5px;
     border-radius: 0 0 5px 5px;
-    margin-left: 30px;
+    margin-left: 90px;
     color: white;
 }
 .Food_contant_Item_title{
     color: white;
 }
 .Food_contant_img{
-    height: 180px;
-    width: 250px;
+    height: 150px;
+    width: 200px;
     border-radius: 10px;
     border: 2px solid grey;
 }
@@ -46,13 +49,13 @@
 }
 @media only screen and (max-width :900px){
     .Food_contant{
-        margin-top: 75px;
+        padding-top: 65px;
     }
-    .Food_contant_title{
+    #Food_contant_title{
         font-size: 8px;
-        font-size: 10px;
-        margin-left: 0px;
-    }
+        font-size: 20px;
+        margin-left: 20px;
+    }s
     .Food_contant_items{
         
         margin: 5px;

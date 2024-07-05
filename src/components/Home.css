@@ -20,14 +20,15 @@
     top: 30%;
     left: 10%;
     font-size: 50px;
-    background-color:rgba(159, 157, 157, 0.463);
+    background-color:rgba(0, 0, 0, 0.558);
     padding: 10px;
     border-radius: 10px;
+    transition: all 0.3s ease-out;
     
 }
 .Home_video{
     background-color: black;
-    margin-top: 85px;
+    /* margin-top: 85px; */
     object-fit: cover;
     box-shadow: 1px 8px 10px black;
 }

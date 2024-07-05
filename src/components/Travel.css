@@ -1,10 +1,12 @@
 .Travel_contant {
-  margin-top: 95px;
+  /* margin-top: 95px; */
   width: 100%;
+  padding-top: 10px;
   min-height: 600px;
   max-height: fit-content;
   background-color: black;
   font-family: "Poppins", sans-serif;
+  padding-left: 40px;
 }
 .Travel_contant_title {
   color: white;
@@ -12,7 +14,7 @@
   background-color: rgba(128, 128, 128, 0.479);
   border-radius: 0 0 5px 5px;
   width: fit-content;
-  margin-left: 30px;
+  margin-left: 90px;
 }
 .Travel_contant_search {
   display: flex;
@@ -20,6 +22,7 @@
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+  margin-left: 50px;
 }
 .Travel_contant_search_title {
   color: white;
@@ -61,7 +64,8 @@
 }
 @media only screen and (max-width: 900px) {
   .Travel_contant {
-    margin-top: 75px;
+    margin-top: 55px;
+    padding-left: 0;
   }
   .Travel_contant_title {
     font-size: 20px;
@@ -71,6 +75,10 @@
   .Travel_contant_search_btn {
     padding: 5px;
     font-size: 20px;
+    
+  }
+  .Travel_contant_search_btns{
+    margin: 0;
   }
   .Travel_contant_location {
     padding: 7px;

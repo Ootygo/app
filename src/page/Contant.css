@@ -1,11 +1,10 @@
 .kavi{
-    margin-top: 10px;
+    
     left: 0%;
 }
 .Cantant{
     height:auto;
-    /* background-color: rgb(0, 0, 0); */
-
+    /* background-color: #333; */
     display: flex;
     justify-content: space-evenly;
     overflow-y: hidden;

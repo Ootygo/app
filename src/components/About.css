@@ -1,10 +1,13 @@
 .About_contant{
-    margin-top: 95px;
+    /* margin-left: 60px; */
+    padding: 20px 20px 20px 50px;
+    color: white;
+    background-color: #333;
 
 }
 .About_Team_member{
     max-width: 600px;
-    border: 2px solid black;
+    border: 2px solid rgba(160, 157, 157, 0.661);
     margin: 5px;
     padding: 10px;
     border-radius: 10px;
@@ -13,8 +16,12 @@
     padding: 10px;
     border: 2px solid black;
     border-radius: 5px;
+    margin-top: 30px;
+    margin-left: 50px;
 }
-
+.About_OurTeam{
+    margin-left: 50px;
+}
 .About_Team_member>img,h2{
     align-items: center;
     align-content: center;
@@ -57,4 +64,10 @@
     margin-bottom: 5px;
     border: 2px solid black;
     border-radius: 5px;
+}
+@media only screen and (max-width:900px) {
+    .About_ootygo{
+        margin-left: 10px;
+        margin-top: 50px;
+    }
 }
