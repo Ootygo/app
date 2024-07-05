@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Stay.css";
 import Navbar from "../page/Navbar";
 import Footer from "../page/Footer";
-import axios from 'axios';
+import axios from "axios";
 // import AWS from "aws-sdk";
 
 // AWS.config.update({
@@ -77,8 +77,7 @@ export default function Stay() {
             </div>
           ))}
         </div> */}
-        <div>
-          <h1>Data from Lambda</h1>
+        <div className="Stay_data">
           {data ? (
             <pre>{JSON.stringify(data, null, 2)}</pre>
           ) : (

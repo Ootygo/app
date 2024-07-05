@@ -49,7 +49,8 @@
   }
   .slide-container_titel_contant{
     text-indent: 20px;
-    margin: 30px 0 0 60px;
+    margin: 30px 0 0 75px;
+    
   }
   .slide-container_btn{
     background-color: rgba(6, 132, 210, 0.88);
@@ -84,6 +85,10 @@
       padding: 2px;
       font-size: 15px;
       font-weight: 200;
+      
+    }
+    .slide-container_titel_contant{
+      margin-left: 10px;
     }
     .slide-container_btn{
       padding: 2px;
@@ -91,6 +96,7 @@
     }
     .slide-container>p{
       font-size: 15px;
+      margin-left: 10px;
     }
     
   }

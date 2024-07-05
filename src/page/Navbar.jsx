@@ -12,7 +12,7 @@ import { RiHotelLine } from "react-icons/ri";
 import { PiVanBold } from "react-icons/pi";
 import { IoIosRestaurant } from "react-icons/io";
 import { useState, useEffect } from "react";
-import logo from "../logo1.png"
+import logo from "../logo.png"
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const handleScroll = () => {
