@@ -10,7 +10,7 @@
 .Food_contant_item{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
     justify-content: space-around;
     align-items: center;
@@ -49,12 +49,13 @@
 }
 @media only screen and (max-width :900px){
     .Food_contant{
-        padding-top: 60px;
+        padding-top: 55px;
     }
     #Food_contant_title{
         font-size: 8px;
         font-size: 20px;
         margin-left: 20px;
+        padding-top: 10px;
     }s
     .Food_contant_items{
         

@@ -8,8 +8,11 @@
 }
 @media only screen and (max-width :900px) {
   .Signup_contant{
-    margin-top: 80px;
+    padding-top: 80px;
     padding-top: 50px;
     padding-bottom: 50px;
+  }
+  .Signup_section{
+    margin-top: 70px;
   }
 }

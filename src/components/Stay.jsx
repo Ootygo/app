@@ -28,7 +28,7 @@ export default function Stay() {
         );
         setData(response.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        // console.error("Error fetching data:", error);
       }
     };
 

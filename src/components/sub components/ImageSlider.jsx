@@ -17,6 +17,7 @@ const divStyle = {
   backgroundSize: "cover",
   height: "500px",
   width: "100%",
+  
 };
 const slideImages = [
   {
@@ -99,8 +100,8 @@ const ImageSlider = () => {
 
           <button onClick={speakText} className="slide-container_btn"><FaMicrophone/>{isSpeaking ? "Stop" : "Speak"}</button>
         </div>
-        <div >
-          <Slide className="Slide_container_img_slide">
+        <div className="Slide_container_img_slide">
+          <Slide >
             {slideImages.map((slideImage, index) => (
               <div key={index}>
                 <div
@@ -108,6 +109,7 @@ const ImageSlider = () => {
                     ...divStyle,
                     backgroundImage: `url(${slideImage.url})`,
                     backgroundPosition: `center`,
+                    
                   }}
                 >
                   

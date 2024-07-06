@@ -28,13 +28,14 @@
 }
 .Home_video{
     background-color: black;
-    /* margin-top: 85px; */
+    
     object-fit: cover;
     box-shadow: 1px 8px 10px black;
 }
 
 @media only screen and (max-width:900px){
-    .Home_video{margin-top: 70px;}
-    .Home_video_titel{font-size: 15px; top: 45%;}
+    .Home_video{margin-top: 70px; height: 600px;}
+    .Home_video_titel{font-size: 20px; top: 35%; left: 25%;}
+    
     
 }

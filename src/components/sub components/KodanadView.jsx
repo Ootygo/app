@@ -94,7 +94,7 @@ function KodanadView() {
             {isSpeaking ? "Stop" : "Speak"}
           </button>
         </div>
-        <div>
+        <div className="Slide_container_img_slide">
           <Slide>
             {slideImages.map((slideImage, index) => (
               <div key={index}>

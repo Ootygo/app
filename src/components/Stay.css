@@ -45,7 +45,7 @@
 
 @media only screen and (max-width: 900px) {
   .Stay_contant {
-    margin-top: 60px;
+    padding-top: 60px;
   }
   .Stay_contant_title {
     font-size: 20px;

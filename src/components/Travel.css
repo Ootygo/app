@@ -64,7 +64,7 @@
 }
 @media only screen and (max-width: 900px) {
   .Travel_contant {
-    margin-top: 55px;
+    padding-top: 55px;
     padding-left: 0;
   }
   .Travel_contant_title {

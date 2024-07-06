@@ -35,16 +35,20 @@
   justify-content: center;
   align-items: center;
   font-family: "Poppins", sans-serif;
+  
 }
 
 .Navbar_menu2_logo {
   height: 70px;
   width: 70px;
-  border-radius: 100px;
+
   filter: drop-shadow(2px 4px 6px black);
   cursor: pointer;
 }
-
+.Navbar_menu2_logo:hover {
+  transition: 0.3s;
+  transform: scale(1.2);
+}
 .Navbar_menu2 > :first-child {
   margin-top: 0;
 }
@@ -55,6 +59,9 @@
   color: black;
   transition-duration: 600ms;
 }
+.ib {
+  width: 10px;
+}
 
 @media only screen and (max-width: 900px) {
   .Navbar_menu_item {
@@ -63,6 +70,10 @@
     height: fit-content;
     padding: 5px;
     border-radius: 50px;
+  }
+  .Navbar_menu_item > svg {
+    height: 20px;
+    width: 20px;
   }
   .Navbar_menu2_logo {
     height: 50px;
@@ -75,10 +86,11 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    box-shadow: none;
   }
   .bi {
     height: 15px;
-    width: 15px;
+    width: 20px;
   }
 }
 
