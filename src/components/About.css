@@ -1,5 +1,5 @@
 .About_contant{
-    /* margin-left: 60px; */
+    
     padding: 20px 20px 20px 50px;
     color: white;
     background-color: #333;
@@ -62,12 +62,24 @@
 .About_tec{
     padding: 10px;
     margin-bottom: 5px;
+    margin-left: 55px;
     border: 2px solid black;
     border-radius: 5px;
 }
 @media only screen and (max-width:900px) {
     .About_ootygo{
         margin-left: 10px;
-        margin-top: 50px;
+        margin-top: 65px;
     }
+    .About_OurTeam{
+        margin-left: 10px;
+    }
+    .About_contant{
+        padding-left: 10px;
+    }
+    .About_tec{
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+    
 }

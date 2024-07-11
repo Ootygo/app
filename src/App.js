@@ -18,6 +18,9 @@ import OotyBoatHouse from "./components/sub components/OotyBoatHouse";
 import KateriPark from "./components/sub components/KateriPark";
 import IdleTimerComponent from "./components/IdleTimerComponent";
 
+
+
+
 const App = () => {
   return (
     <>

@@ -14,15 +14,17 @@ function Home() {
       <Navbar />
       <div className="Home_body">
         <div className="Home_video_container">
+          
           <video
             src="https://videos.pexels.com/video-files/17780427/17780427-hd_1920_1080_60fps.mp4"
-            
+            playbackRate="0.5"
+            loop
             muted
             autoPlay
             width="100%"
             className="Home_video"
-            speed="0.5"
-            controlsList="no-download"
+            
+            controlsList="nodownload"
           ></video>
           <h1 className="Home_video_titel">Welcome to Ooty</h1>
           <div className="gradient-overlay"></div>

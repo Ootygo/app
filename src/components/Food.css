@@ -58,11 +58,11 @@
         padding-top: 10px;
     }s
     .Food_contant_items{
+        width: 100%;
         
-        margin: 5px;
     }
     .Food_contant_item{
         
-        margin: 5px;
+        margin: 5px 5px 5px 10px;
     }
 }

@@ -62,6 +62,33 @@
   transform: scale(1.1);
   transition: 150ms;
 }
+.Travel_vehicles_title {
+  color: white;
+}
+.Travel_vehicles {
+  padding-left: 60px;
+}
+.Travel_vehicle_items {
+  color: white;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  text-align: center;
+}
+.Travel_vehicle_item>img{
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Travel_vehicle_item>img:hover{
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+.Travel_vehicle_item>h3>span>svg{
+  color: rgba(0, 0, 255, 0.854);
+  margin-left: 5px;
+}
 @media only screen and (max-width: 900px) {
   .Travel_contant {
     padding-top: 55px;
@@ -75,9 +102,10 @@
   .Travel_contant_search_btn {
     padding: 5px;
     font-size: 20px;
-    
+    margin: 10px;
+    border: none;
   }
-  .Travel_contant_search_btns{
+  .Travel_contant_search_btns {
     margin: 0;
   }
   .Travel_contant_location {
@@ -91,5 +119,24 @@
     width: 250px;
     font-size: 15px;
     font-weight: 600;
+  }
+  .Travel_contant_search {
+    margin-left: 10px;
+  }
+  .Travel_contant_search_btn {
+    padding: 5px;
+    font-size: 10px;
+    width: 100px;
+  }
+  .Travel_vehicles {
+    margin-left: 10px;
+    padding: 10px;
+  }
+  .Travel_vehicle_item>img{
+    height: 150px;
+    width: 250px;
+  }
+  .Travel_vehicle_item>h3{
+    font-size: 20px;
   }
 }
