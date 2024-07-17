@@ -13,3 +13,5 @@ body::-webkit-scrollbar {
 code {
   font-family: "Poppins", sans-serif;
 }
+/* In your main CSS file */
+@import 'normalize.css';

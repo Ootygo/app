@@ -16,17 +16,11 @@ import BotanicalGarden from "./components/sub components/BotanicalGarden";
 import About from "./components/About";
 import OotyBoatHouse from "./components/sub components/OotyBoatHouse";
 import KateriPark from "./components/sub components/KateriPark";
-import IdleTimerComponent from "./components/IdleTimerComponent";
-
-
-
 
 const App = () => {
   return (
     <>
       <div>
-        <IdleTimerComponent />
-
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/Places" element={<Places />} />

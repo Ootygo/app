@@ -1,8 +1,8 @@
 .Stay_contant {
-  /* margin-top: 95px; */
+  
   padding-top: 5px;
   width: 100%;
-  min-height: 500px;
+  min-height: 700px;
   max-height: fit-content;
   background-color: black;
   font-family: "Poppins", sans-serif;
@@ -29,6 +29,7 @@
 }
 .Stay_data{
   margin-left: 90px;
+  
 }
 .Stay_hotel_img{
     border-radius: 5px;
@@ -43,9 +44,11 @@
     
 }
 
+
+
 @media only screen and (max-width: 900px) {
   .Stay_contant {
-    padding-top: 60px;
+    padding-top: 55px;
   }
   .Stay_contant_title {
     font-size: 20px;

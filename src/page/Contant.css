@@ -1,59 +1,81 @@
-.kavi{
-    
-    left: 0%;
+.kavi {
+  left: 0%;
+  transition: 0.5s linear;
+  position: relative;
 }
-.Cantant{
-    height:auto;
-    /* background-color: #333; */
-    display: flex;
-    justify-content: space-evenly;
-    overflow-y: hidden;
-    font-family: "Poppins", sans-serif;
+
+.Cantant {
+  height: auto;
+  /* background-color: #333; */
+  display: flex;
+  justify-content: space-evenly;
+  overflow-y: hidden;
+  font-family: "Poppins", sans-serif;
 }
 .Contant_1,
-.Contant_2{
-    margin-top: 5px;
+.Contant_2 {
+  margin-top: 5px;
+}
+.Contant_img {
+  height: 300px;
+  width: 300px;
+  border-radius: 80px;
+  box-shadow: 5px 10px 10px;
+  cursor: pointer;
+}
+.Contant_video {
+  height: 500px;
+  width: 700px;
+  filter: drop-shadow(5px 10px 5px black);
+  border-radius: 50px;
+  margin: 10px;
+  position: absolute;
+  z-index: 2;
+  left: 35%;
+  top: 10%;
+  border-radius: 10px;
+  border: 5px solid rgba(91, 168, 91, 0.578);
+}
+.Contant_video:hover{
+    z-index: 4;
+}
+.Contant_img:checked {
+  transform: scale(1.1);
+  transition: 150ms;
+}
+.Contant_Title {
+  color: white;
+  margin-left: 100px;
+  font-size: 30px;
+  font-weight: 400;
+  background-color: rgba(159, 157, 157, 0.697);
+  border-radius: 10px;
+  width: fit-content;
+  padding: 5px;
+  font-family: "Poppins", sans-serif;
+}
 
-}
-.Contant_img{
-     height: 300px;
-     width: 100%;
-     border-radius: 80px;
-     box-shadow: 5px 10px 10px;
-     cursor: pointer;
-}
-.Contant_img:hover{
-    transform: scale(1.1);
-    transition: 150ms;
-}
-.Contant_Title{
+@media only screen and (max-width: 900px) {
+  .Contant_img {
+    height: 150px;
+    width: 150px;
+  }
+  .Contant_video {
+    height: 250px;
+    width: 300px;
+    left: 10px;
+    top: 0;
+  }
+  .Contant_Title {
     color: white;
-    margin-left: 100px;
+    margin-left: 0px;
     font-size: 30px;
-    font-weight: 400;
-    background-color:rgba(159, 157, 157, 0.697);
-    border-radius: 10px;
-    width: fit-content;
-    padding: 5px;
-    font-family: "Poppins", sans-serif;
-}
-
-@media only screen and (max-width:900px){
-    .Contant_img{
-      height: 150px;
-      width: 150px;
-    }
-    .Contant_Title{
-        color: white;
-        margin-left: 0px;
-        font-size: 30px;
-        font-weight: 200;
-    }
-    .Contant_Title{
-        color: white;
-        margin-left: 50px;
-        font-size: 20px;
-        font-weight: 100;
-    }
-    
+    font-weight: 200;
+  }
+  .Contant_Title {
+    color: white;
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: 100;
+  }
 }

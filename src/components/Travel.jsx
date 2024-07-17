@@ -6,30 +6,26 @@ import { useEffect } from "react";
 import AWS from "aws-sdk";
 import { MdVerified } from "react-icons/md";
 
-
 export default function Travel() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  
   const s3 = new AWS.S3();
   const params = {
-    Bucket: 'travel-partners',
-    Key: 'IMG-20240711-WA0010.jpg', // Replace with the actual object key
+    Bucket: "travel-partners",
+    Key: "IMG-20240711-WA0010.jpg", // Replace with the actual object key
   };
-  
+
   s3.getObject(params, (err, data) => {
     if (err) {
-      console.error('Error fetching data from S3:', err);
+      console.error("Error fetching data from S3:", err);
     } else {
       const fileContent = data; // Convert binary data to a string
-      console.log('File content:', fileContent);
+      console.log("File content:", fileContent);
       // Now you can use the file content in your React app
     }
   });
-  
-
 
   return (
     <>
@@ -49,7 +45,22 @@ export default function Travel() {
               </div>
               <div>
                 <h4 className="Travel_contant_search_title">Package</h4>
-                <input type="text" className="Travel_contant_location" />
+
+                <select
+                  name="Package"
+                  id="pack"
+                  className="Travel_contant_location"
+                  
+                >
+                  <option value="">Select</option>
+                  <option value="pac">1 Day Trip</option>
+                  <option value="pac">2 Day Trip</option>
+                  <option value="pac">3 Day Trip</option>
+                  <option value="pac">Couple special</option>
+                  <option value="pac">Family Frindly</option>
+                  <option value="pac">Gang Trip</option>
+                  <option value="pac">School & College</option>
+                </select>
               </div>
               <div>
                 <h4 className="Travel_contant_search_title">Date</h4>
@@ -69,18 +80,48 @@ export default function Travel() {
           </h2>
           <div className="Travel_vehicle_items">
             <div className="Travel_vehicle_item">
-              <img src="https://content.jdmagicbox.com/comp/trichy/k8/0431px431.x431.210112234021.e7k8/catalogue/kk-tours-and-travels-manachanallur-trichy-tempo-travellers-on-rent-tfe7ku79yu.jpg" alt="Sivamayam" height="200px" width="300px" />
-              <h3>Sivamayam travels<span><MdVerified /></span></h3>
+              <img
+                src="https://content.jdmagicbox.com/comp/trichy/k8/0431px431.x431.210112234021.e7k8/catalogue/kk-tours-and-travels-manachanallur-trichy-tempo-travellers-on-rent-tfe7ku79yu.jpg"
+                alt="Sivamayam"
+                height="200px"
+                width="300px"
+              />
+              <h3>
+                Sivamayam travels
+                <span>
+                  <MdVerified />
+                </span>
+              </h3>
               <p>cell: 9787617***</p>
             </div>
             <div className="Travel_vehicle_item">
-              <img src="https://media.zigcdn.com/media/model/2023/Apr/front-1-4-left-28113912_600x400.jpg" alt="Sivamayam" height="200px" width="300px" />
-              <h3>Kutty travels<span><MdVerified /></span></h3>
+              <img
+                src="https://media.zigcdn.com/media/model/2023/Apr/front-1-4-left-28113912_600x400.jpg"
+                alt="Sivamayam"
+                height="200px"
+                width="300px"
+              />
+              <h3>
+                Kutty travels
+                <span>
+                  <MdVerified />
+                </span>
+              </h3>
               <p>cell: 9789334***</p>
             </div>
             <div className="Travel_vehicle_item">
-              <img src="https://cdni.autocarindia.com/ExtraImages/20210713115737_Buying_Used_Swift_1.jpg" alt="Sivamayam" height="200px" width="300px" />
-              <h3>Shobana travels<span><MdVerified /></span></h3>
+              <img
+                src="https://cdni.autocarindia.com/ExtraImages/20210713115737_Buying_Used_Swift_1.jpg"
+                alt="Sivamayam"
+                height="200px"
+                width="300px"
+              />
+              <h3>
+                Shobana travels
+                <span>
+                  <MdVerified />
+                </span>
+              </h3>
               <p>cell: 9025897***</p>
             </div>
           </div>
