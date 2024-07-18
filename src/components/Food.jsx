@@ -2,55 +2,83 @@ import Footer from "../page/Footer";
 import Navbar from "../page/Navbar";
 import "./Food.css";
 import { useEffect } from "react";
+import { FaStar, FaRegStar } from "react-icons/fa";
+
 
 export default function Food() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <div>
         <Navbar />
         <div className="Food_contant">
           <div className="Food_contant_title">
-            <h1 id="Food_contant_title">Find the best food ever</h1>
+            <h1 id="Food_contant_title">See Ooty's Menu</h1>
           </div>
           <div className="Food_contant_item">
             <div className="Food_contant_items">
-              <h2 className="Food_contant_Item_title">Dam view resort</h2>
+              <h2 className="Food_contant_Item_title">Hotel Taj</h2>
               <img
                 className="Food_contant_img"
-                src="https://res.cloudinary.com/purnesh/image/upload/w_1080,f_auto/header310.jpg"
+                src="https://lh5.googleusercontent.com/p/AF1QipOq80mTk-fK8xK1lb_DHEMN4pm42ymTYr20IhxM=w203-h270-k-no"
                 alt="img"
               />
-              <h3 className="Food_contant_sub">About</h3>
+              <button className="Food_Hotel_Menu_Btn">View Menu</button>
+              <div className="Food_hotel_rating"><FaStar /><FaStar /><FaStar /><FaStar /><FaRegStar /></div>
             </div>
             <div className="Food_contant_items">
-              <h2 className="Food_contant_Item_title">Dam view resort</h2>
+              <h2 className="Food_contant_Item_title">A2B</h2>
               <img
                 className="Food_contant_img"
-                src="https://res.cloudinary.com/purnesh/image/upload/w_1080,f_auto/header310.jpg"
+                src="https://lh5.googleusercontent.com/p/AF1QipN9FC7ARExX6XlxfL4NLg2F6LCw3vu2_XMsE9_f=w203-h152-k-no"
                 alt="img"
               />
-              <h3 className="Food_contant_sub">About</h3>
+              <button className="Food_Hotel_Menu_Btn">View Menu</button>
+              <div className="Food_hotel_rating"><FaStar /><FaStar /><FaStar /><FaStar /><FaRegStar /></div>
             </div>
             <div className="Food_contant_items">
-              <h2 className="Food_contant_Item_title">Dam view resort</h2>
+              <h2 className="Food_contant_Item_title">Hotel Junior Kuppanna</h2>
               <img
                 className="Food_contant_img"
-                src="https://res.cloudinary.com/purnesh/image/upload/w_1080,f_auto/header310.jpg"
+                src="https://lh5.googleusercontent.com/p/AF1QipMPDsRRnvSpyT_fpU6R0UW4eAo6RDOhMVebFkKq=w203-h152-k-no"
                 alt="img"
               />
-              <h3 className="Food_contant_sub">About</h3>
+              <button className="Food_Hotel_Menu_Btn">View Menu</button>
+              <div className="Food_hotel_rating"><FaStar /><FaStar /><FaStar /><FaStar /><FaRegStar /></div>
             </div>
             <div className="Food_contant_items">
-              <h2 className="Food_contant_Item_title">Dam view resort</h2>
+              <h2 className="Food_contant_Item_title">Hyderabad Biryani House</h2>
               <img
                 className="Food_contant_img"
-                src="https://res.cloudinary.com/purnesh/image/upload/w_1080,f_auto/header310.jpg"
+                src="https://lh5.googleusercontent.com/p/AF1QipNnPBiNFjd51we2mCzRoSTcY8USlnZ25F8cjmtL=w203-h152-k-no"
                 alt="img"
               />
-              <h3 className="Food_contant_sub">About</h3>
+              <button className="Food_Hotel_Menu_Btn">View Menu</button>
+              <div className="Food_hotel_rating"><FaStar /><FaStar /><FaStar /><FaStar /><FaRegStar /></div>
+            </div>
+            <div className="Food_contant_items">
+              <h2 className="Food_contant_Item_title">KFC</h2>
+              <img
+                className="Food_contant_img"
+                src="https://lh5.googleusercontent.com/p/AF1QipM8Sr4Eifk0ZnPCinZ2vMCZ-147lxoAJj6DkH_g=s551-k-no"
+                alt="img"
+                
+              />
+              <button className="Food_Hotel_Menu_Btn">View Menu</button>
+              <div className="Food_hotel_rating"><FaStar /><FaStar /><FaStar /><FaStar /><FaRegStar /></div>
+            </div>
+            <div className="Food_contant_items">
+              <h2 className="Food_contant_Item_title">Domino's Pizza</h2>
+              <img
+                className="Food_contant_img"
+                src="https://lh5.googleusercontent.com/p/AF1QipPvD9erg_c3BvOjT6go-ngb7Z8fWKh9XAKjKs9o=w203-h270-k-no"
+                alt="img"
+              />
+              <button className="Food_Hotel_Menu_Btn">View Menu</button>
+              <div className="Food_hotel_rating"><FaStar /><FaStar /><FaStar /><FaStar /><FaRegStar /></div>
             </div>
           </div>
         </div>

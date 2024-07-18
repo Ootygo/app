@@ -22,10 +22,14 @@ export default function SignUp() {
           <Authenticator>
             {({ signOut, user }) => (
               <main>
-                <h1>Hello {user.signInDetails.loginId.slice(0, 5)}</h1>
-
-                <button onClick={signOut}>Sign out</button>
+                <h1 className="Signup_User_greet">Hello! <br />{user.signInDetails.loginId}</h1>
+                <div className="User_Profile_Section">
+                  <button>My bookings</button>
+                  <button>Support</button>
+                  <button onClick={signOut}>Sign out</button>
+                </div>
               </main>
+              
             )}
           </Authenticator>
         </div>

@@ -33,6 +33,8 @@
 }
 .Food_contant_Item_title{
     color: white;
+    height: 60px;
+    text-align: center;
 }
 .Food_contant_img{
     height: 150px;
@@ -40,12 +42,29 @@
     border-radius: 10px;
     border: 2px solid grey;
 }
+.Food_Hotel_Menu_Btn{
+    border: none;
+    background-color: rgba(6, 132, 210, 0.88);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
 .Food_contant_img:hover{
     transition: 150ms;
     transform: scale(1.1)
 }
 .Food_contant_about{
     color: white;
+}
+.Food_hotel_rating{
+    margin: 5px;
+    text-align: center;
+}
+.Food_hotel_rating>svg{
+    color: gold;
 }
 @media only screen and (max-width :900px){
     .Food_contant{
@@ -56,13 +75,14 @@
         font-size: 20px;
         margin-left: 20px;
         padding-top: 10px;
-    }s
+    }
+    .Food_contant_item{
+        margin-left: 10px;
+        gap: 5px;
+    }
     .Food_contant_items{
         width: 100%;
         
     }
-    .Food_contant_item{
-        
-        margin: 5px 5px 5px 10px;
-    }
+   
 }

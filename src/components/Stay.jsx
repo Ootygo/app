@@ -23,7 +23,7 @@ export default function Stay() {
             </div>
           ))} */}
           <div>
-            <h1>DynamoDB Items</h1>
+            <h1>Hotels are coming soon..</h1>
             
           </div>
         </div>

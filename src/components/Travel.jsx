@@ -3,30 +3,13 @@ import "./Travel.css";
 import Navbar from "../page/Navbar";
 import Footer from "../page/Footer";
 import { useEffect } from "react";
-import AWS from "aws-sdk";
+
 import { MdVerified } from "react-icons/md";
 
 export default function Travel() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const s3 = new AWS.S3();
-  const params = {
-    Bucket: "travel-partners",
-    Key: "IMG-20240711-WA0010.jpg", // Replace with the actual object key
-  };
-
-  s3.getObject(params, (err, data) => {
-    if (err) {
-      console.error("Error fetching data from S3:", err);
-    } else {
-      const fileContent = data; // Convert binary data to a string
-      console.log("File content:", fileContent);
-      // Now you can use the file content in your React app
-    }
-  });
-
   return (
     <>
       <Navbar />
