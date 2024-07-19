@@ -51,8 +51,8 @@ function Footer() {
               <h4 itemType="Email">admin@ootygo.in</h4>
               <h4>© 2023, Ootygo Technologies</h4>
 
-              <Link to="/About">
-                <h4>About Us</h4>
+              <Link to="/About" className="About_link">
+                <h4 >About Us</h4>
               </Link>
             </div>
           </div>

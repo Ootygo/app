@@ -61,30 +61,35 @@ function About() {
               <img src={image3} className="About_img" alt="Team" />
               <h2 className="About_team_title">Vinoth - COO</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
-                odio accusamus laborum officiis eius aliquid quis quam animi,
-                deserunt repudiandae veniam? Corrupti dicta voluptates odio
-                consequuntur. Praesentium itaque quis doloremque.
+                As the Chief Operating Officer (COO) of Ootygo, Vinoth Kumar is
+                responsible for overseeing the company's operations and
+                management. In this role, he plays a key part in ensuring that
+                the company runs efficiently and effectively, overseeing various
+                aspects of the business to drive growth and success.
               </p>
             </div>
             <div className="About_Team_member">
               <img src={image4} className="About_img" alt="Team" />
               <h2 className="About_team_title">Ruban - CFO</h2>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Veritatis harum deserunt neque cum accusamus ipsam laudantium
-                non sunt veniam odio quasi aperiam odit quas, rem laborum esse!
-                Officiis, et perferendis.
+                As the Chief Financial Officer (CFO) of Ootygo, Ruban is
+                responsible for managing all financial aspects of the company.
+                In this key role, he oversees financial planning, budgeting, and
+                analysis to support the company's overall financial strategy and
+                growth. Ruban plays a critical part in ensuring the company's
+                financial health and stability.
               </p>
             </div>
             <div className="About_Team_member">
               <img src={image5} className="About_img" alt="Team" />
               <h2 className="About_team_title">Guru - CMO</h2>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Aliquam rerum architecto distinctio ducimus obcaecati, dicta ut
-                animi cum neque a explicabo pariatur placeat dolores reiciendis
-                aliquid, delectus totam repellat recusandae!
+                As the Chief Marketing Officer (CMO) of Ootygo, Guru is tasked
+                with the oversight of the company's marketing activities,
+                driving growth, and managing customer relationships. In this
+                capacity, Guru assumes a crucial role in formulating and
+                executing marketing strategies aimed at enhancing the company's
+                brand presence and nurturing strong customer connections.
               </p>
             </div>
           </div>
