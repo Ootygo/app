@@ -1,20 +1,18 @@
 import React from "react";
 import "./Contant.css";
 import { useState } from "react";
+import { MdOutlineCancel } from "react-icons/md";
 
 function Contant() {
   const [isShown1, setIsShown1] = useState(false);
   const [isShown2, setIsShown2] = useState(false);
-  
-  
+
   // const [isShown3, setIsShown3] = useState(false);
   // const [isShown4, setIsShown4] = useState(false);
   // const [isShown5, setIsShown5] = useState(false);
   // const [isShown6, setIsShown6] = useState(false);
   // const [isShown7, setIsShown7] = useState(false);
   // const [isShown8, setIsShown8] = useState(false);
-  
-  
 
   return (
     <>
@@ -38,11 +36,6 @@ function Contant() {
                   referrerpolicy="strict-origin-when-cross-origin"
                   allowfullscreen
                   aria-controls="none"
-                  onMouseLeave={() => {
-                    setIsShown1(false);
-                  }}
-                  
-                  
                 ></iframe>
               ) : (
                 <img
@@ -52,6 +45,16 @@ function Contant() {
                 />
               )}
             </span>
+            <button
+              onClick={() => {
+                setIsShown1(false);
+              }}
+              className={
+                isShown1 ? "Contant_video_active" : "Contant_video_inactive"
+              }
+            >
+              <MdOutlineCancel />
+            </button>
             <h3 className="Contant_Title">Wildlife</h3>
           </div>
           <div className="kavi">
@@ -68,9 +71,7 @@ function Contant() {
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                   referrerpolicy="strict-origin-when-cross-origin"
-                  onMouseLeave={() => {
-                    setIsShown2(false);
-                  }}
+                 
                 ></iframe>
               ) : (
                 <img
@@ -80,6 +81,16 @@ function Contant() {
                 />
               )}
             </span>
+            <button
+              onClick={() => {
+                setIsShown2(false);
+              }}
+              className={
+                isShown2 ? "Contant_video_active" : "Contant_video_inactive"
+              }
+            >
+              <MdOutlineCancel />
+            </button>
             <h3 className="Contant_Title">Roads</h3>
           </div>
           <div className="kavi">

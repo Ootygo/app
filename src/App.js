@@ -2,7 +2,7 @@ import "./App.css";
 import {Route, Routes } from "react-router-dom";
 
 import Home from "./components/Home";
-import Places from "./components/Places";
+import Places from "./components/Places"
 import Stay from "./components/Stay";
 import Travel from "./components/Travel";
 import Food from "./components/Food";
