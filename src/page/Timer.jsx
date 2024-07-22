@@ -1,26 +1,26 @@
-import React, { useState, useEffect} from 'react';
+// import React, { useState, useEffect} from 'react';
 import './Time.css'
 
 const Time = () => {
-  const [timer, setTimer] = useState("00:00:00");
-  const targetTime = Date.parse("2024-07-22T00:00:00"); // set time
+  // const [timer, setTimer] = useState("00:00:00");
+  // const targetTime = Date.parse("2024-07-22T00:00:00"); // set time
 
-  const getTimeRemaining = () => {
-    const total = targetTime - Date.now();
-    const seconds = Math.floor((total / 1000) % 60);
-    const minutes = Math.floor((total / 1000 / 60) % 60);
-    const hours = Math.floor(total / (1000 * 60 * 60));
-    return `${hours}:${minutes > 9 ? minutes : "0" + minutes}:${seconds > 9 ? seconds : "0" + seconds}`;
-  };
+  // const getTimeRemaining = () => {
+  //   const total = targetTime - Date.now();
+  //   const seconds = Math.floor((total / 1000) % 60);
+  //   const minutes = Math.floor((total / 1000 / 60) % 60);
+  //   const hours = Math.floor(total / (1000 * 60 * 60));
+  //   return `${hours}:${minutes > 9 ? minutes : "0" + minutes}:${seconds > 9 ? seconds : "0" + seconds}`;
+  // };
 
-  const startTimer = () => {
-    setTimer(getTimeRemaining());
-  };
+  // const startTimer = () => {
+  //   setTimer(getTimeRemaining());
+  // };
 
-  useEffect(() => {
-    const intervalId = setInterval(startTimer, 1000);
-    return () => clearInterval(intervalId);
-  },);
+  // useEffect(() => {
+  //   const intervalId = setInterval(startTimer, 1000);
+  //   return () => clearInterval(intervalId);
+  // },);
 
   return (
     <>
