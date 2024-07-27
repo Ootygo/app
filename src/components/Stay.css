@@ -1,5 +1,4 @@
 .Stay_contant {
-  
   padding-top: 5px;
   width: 100%;
   min-height: 700px;
@@ -24,27 +23,53 @@
   gap: 10px;
   color: white;
 }
-.Stay_hotel_title{
-    color: white;
+.Stay_hotel_title {
+  color: white;
 }
-.Stay_data{
+.Stay_data {
   margin-left: 90px;
-  
 }
-.Stay_hotel_img{
-    border-radius: 5px;
-    height: 200px;
-    width: 300px;
-    cursor: pointer;
+.Stay_hotel_img {
+  border-radius: 5px;
+  height: 200px;
+  width: 300px;
+  cursor: pointer;
 }
-.Stay_hotel_img:hover{
-    transform: scale(1.1);
-    transition: 0.3s;
-    
-    
+.Stay_hotel_img:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
-
+.loading {
+  animation: loadanimation 2.5s infinite linear;
+  height: 90px;
+  width: 90px;
+  border-radius: 50px;
+  padding: 2px;
+  background-color: rgb(11, 197, 221);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading > div {
+  height: 80px;
+  width: 80px;
+  border-radius: 50px 10px 50px 10px;
+  display: block;
+  background-color: rgb(0, 0, 0);
+}
+@keyframes loadanimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  20%{background-color: blue;}
+  40%{background-color: blueviolet;}
+  60%{background-color: greenyellow;}
+  80%{background-color: yellow;}
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 @media only screen and (max-width: 900px) {
   .Stay_contant {
@@ -55,12 +80,14 @@
     padding: 8px;
     margin-left: 10px;
   }
-  .Stay_hotel_img{
-   
+  .Stay_hotel_img {
     height: 180px;
     width: 250px;
-}
-.Stay_data{
-  margin-left: 20px;
-}
+  }
+  .Stay_data {
+    margin-left: 20px;
+  }
+  .loading_section{
+    padding-top: 50px;
+  }
 }

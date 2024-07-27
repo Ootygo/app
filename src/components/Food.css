@@ -14,14 +14,14 @@
     align-items: center;
     justify-content: space-around;
     align-items: center;
-    margin-left: 50px;
+    margin-left: 65px;
     
 }
 .Food_contant_items{
     max-width: 200px;
     margin: 10px;
     cursor: pointer;
-    padding: 10px;
+    
 }
 #Food_contant_title{
     background-color: rgba(128, 128, 128, 0.479);

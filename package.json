@@ -15,7 +15,7 @@
     "amplify": "^0.0.11",
     "aws": "^0.0.3-2",
     "aws-amplify": "^6.3.4",
-    "aws-sdk": "^2.1659.0",
+    "aws-sdk": "^2.1661.0",
     "aws-secrets-manager": "^1.1.0",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",

@@ -28,6 +28,7 @@ export default function Food() {
               />
               <button className="Food_Hotel_Menu_Btn">View Menu</button>
               <div className="Food_hotel_rating"><FaStar /><FaStar /><FaStar /><FaStar /><FaRegStar /></div>
+              
             </div>
             <div className="Food_contant_items">
               <h2 className="Food_contant_Item_title">A2B</h2>
