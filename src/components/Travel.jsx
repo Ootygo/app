@@ -2,14 +2,56 @@ import React from "react";
 import "./Travel.css";
 import Navbar from "../page/Navbar";
 import Footer from "../page/Footer";
-import { useEffect } from "react";
-
-import { MdVerified } from "react-icons/md";
-
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import { MdAddIcCall } from "react-icons/md";
+import AWS from "aws-sdk";
+import { useAuthenticator } from "@aws-amplify/ui-react";
+import "../components/Stay.css";
 export default function Travel() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/SignUp");
+  };
+  const { user } = useAuthenticator((context) => [context.user]);
+
+  const [data, setData] = useState([]);
+  // Initialize AWS SDK
+  AWS.config.update({
+    region: process.env.REACT_APP_AWS_REGION,
+    accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+  });
+
+  useEffect(() => {
+    const dynamodb = new AWS.DynamoDB.DocumentClient();
+    const params = {
+      TableName: "Ootygo-travel",
+    };
+
+    dynamodb.scan(params, (err, result) => {
+      if (err) {
+        console.error("Error fetching data from DynamoDB:", err);
+      } else {
+        setData(result.Items);
+      }
+    });
+  }, []);
+
+  const shuffleHotel = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+
+  const shuffledData = shuffleHotel([...data]);
   return (
     <>
       <Navbar />
@@ -19,21 +61,12 @@ export default function Travel() {
           <form action="submit">
             <div className="Travel_contant_search">
               <div>
-                <h4 className="Travel_contant_search_title">Starting</h4>
-                <input type="text" className="Travel_contant_location" />
-              </div>
-              <div>
-                <h4 className="Travel_contant_search_title">Destination</h4>
-                <input type="text" className="Travel_contant_location" />
-              </div>
-              <div>
                 <h4 className="Travel_contant_search_title">Package</h4>
 
                 <select
                   name="Package"
                   id="pack"
                   className="Travel_contant_location"
-                  
                 >
                   <option value="">Select</option>
                   <option value="pac">1 Day Trip</option>
@@ -61,52 +94,26 @@ export default function Travel() {
           <h2 className="Travel_vehicles_title">
             Our Authorized Travel Partners
           </h2>
-          <div className="Travel_vehicle_items">
-            <div className="Travel_vehicle_item">
-              <img
-                src="https://content.jdmagicbox.com/comp/trichy/k8/0431px431.x431.210112234021.e7k8/catalogue/kk-tours-and-travels-manachanallur-trichy-tempo-travellers-on-rent-tfe7ku79yu.jpg"
-                alt="Sivamayam"
-                height="200px"
-                width="300px"
-              />
-              <h3>
-                Sivamayam travels
-                <span>
-                  <MdVerified />
-                </span>
-              </h3>
-              <p>cell: 9787617***</p>
+          <div className="Stay_contant">
+            
+            <div className="Stay_contant_Hotels">
+              {shuffledData.map(({ name, imgurl, number }, index) => (
+                <div key={index}>
+                  <img src={imgurl} alt="test-img" className="Stay_hotel_img" />
+                  <h3 className="Stay_hotel_title">{name}</h3>
+                  <span>
+                    {user ? (
+                      <span>Ph.{number}</span>
+                    ) : (
+                      <span className="Travel_call_btn">
+                        <MdAddIcCall onClick={handleClick} />
+                      </span>
+                    )}
+                  </span>
+                </div>
+              ))}
             </div>
-            <div className="Travel_vehicle_item">
-              <img
-                src="https://media.zigcdn.com/media/model/2023/Apr/front-1-4-left-28113912_600x400.jpg"
-                alt="Sivamayam"
-                height="200px"
-                width="300px"
-              />
-              <h3>
-                Kutty travels
-                <span>
-                  <MdVerified />
-                </span>
-              </h3>
-              <p>cell: 9789334***</p>
-            </div>
-            <div className="Travel_vehicle_item">
-              <img
-                src="https://cdni.autocarindia.com/ExtraImages/20210713115737_Buying_Used_Swift_1.jpg"
-                alt="Sivamayam"
-                height="200px"
-                width="300px"
-              />
-              <h3>
-                Shobana travels
-                <span>
-                  <MdVerified />
-                </span>
-              </h3>
-              <p>cell: 9025897***</p>
-            </div>
+            <div className="Stay_data"></div>
           </div>
         </div>
       </div>

@@ -78,7 +78,7 @@
   }
   @media only screen and (max-width :900px){
     .slide-container{
-      margin-top: 80px;
+      padding-top: 80px;
     }
     .hover-video{
       width: 350px;

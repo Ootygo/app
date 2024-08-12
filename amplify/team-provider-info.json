@@ -10,6 +10,11 @@
       "StackName": "amplify-ootygo-dev-73369",
       "StackId": "arn:aws:cloudformation:ap-south-1:046474817983:stack/amplify-ootygo-dev-73369/446c2240-19bf-11ef-8bd6-0282cda781c5",
       "AmplifyAppId": "d2ss70d0rjqeqo"
+    },
+    "categories": {
+      "auth": {
+        "ootygo3501a521": {}
+      }
     }
   },
   "staging": {

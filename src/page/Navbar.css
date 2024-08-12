@@ -19,8 +19,9 @@
 .Navbar.scrolled {
   height: 60px;
   transition: all 0.5s ease-out;
-  background-color: #33333300;
+  background-color:unset;
   filter: drop-shadow(1px 1px 2px black);
+  box-shadow: unset;
 }
 
 .Navbar_menu_item {

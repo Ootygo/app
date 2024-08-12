@@ -77,18 +77,33 @@
   flex-wrap: wrap;
   gap: 10px;
   text-align: center;
+  padding-bottom: 20px;
 }
-.Travel_vehicle_item>img{
+.Travel_vehicle_item > img {
   border-radius: 5px;
   cursor: pointer;
 }
-.Travel_vehicle_item>img:hover{
+.Travel_vehicle_item > img:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
-.Travel_vehicle_item>h3>span>svg{
+.Travel_vehicle_item > h3 > span > svg {
   color: rgba(0, 0, 255, 0.854);
   margin-left: 5px;
+}
+.Travel_call_btn{
+  padding: 10px;
+  margin: 5px;
+  background-color: rgba(128, 128, 128, 0.629);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Travel_call_btn > svg {
+  color: white;
+}
+.Travel_call_btn:hover {
+  background-color: gray;
+  transition: 0.5s;
 }
 @media only screen and (max-width: 900px) {
   .Travel_contant {
@@ -133,11 +148,11 @@
     margin-left: 10px;
     padding: 10px;
   }
-  .Travel_vehicle_item>img{
+  .Travel_vehicle_item > img {
     height: 150px;
     width: 250px;
   }
-  .Travel_vehicle_item>h3{
+  .Travel_vehicle_item > h3 {
     font-size: 20px;
   }
 }

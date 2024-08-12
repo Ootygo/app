@@ -91,7 +91,7 @@ function Contant() {
             >
               <MdOutlineCancel />
             </button>
-            <h3 className="Contant_Title">Roads</h3>
+            <h3 className="Contant_Title">Road</h3>
           </div>
           <div className="kavi">
             <img
@@ -127,7 +127,7 @@ function Contant() {
               alt="5"
               width="300px"
             />
-            <h3 className="Contant_Title">Rain</h3>
+            <h3 className="Contant_Title">Lake</h3>
           </div>
           <div className="kavi">
             <img

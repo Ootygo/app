@@ -1,0 +1,24 @@
+.Post_Hotel_Data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  text-align: center;
+}
+.Post_Hotel_Data_Content{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+}
+.Post_Hotel_Data_Content>label>input{
+    color: black;
+}
+.Hotel_Post_Btn{
+  margin: 20px;
+  width: 150px;
+}

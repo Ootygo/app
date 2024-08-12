@@ -34,7 +34,7 @@
 }
 
 @media only screen and (max-width:900px){
-    .Home_video{margin-top: 70px; height: 800px;}
+    .Home_video{height: 700px;}
     .Home_video_titel{font-size: 20px; top: 35%; left: 25%;}
     
     

@@ -48,7 +48,7 @@ function Navbar() {
   }, []);
   return (
     <>
-      <div className={`Navbar ${isScrolled ? "scrolled" : ""}`}>
+      <div className={`Navbar ${isScrolled ? "" : "scrolled"}`}>
         <span>
           <Link to="/">
             <span>

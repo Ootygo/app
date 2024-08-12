@@ -1,0 +1,16 @@
+.Partners_section{
+    padding-top: 10px;
+    background-color: black;
+    color: white;
+    padding-left: 90px;
+    min-height: 500px;
+}
+@media only screen and (max-width:900px) {
+    .Partners_section{
+        padding-top: 80px;
+        padding-left: 10px;
+    }
+    .Partners_section>h2{
+        font-size: 20px;
+    }
+}

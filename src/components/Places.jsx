@@ -137,32 +137,11 @@ export default function Places() {
           </div>
 
           <div>
-            <div className="Place_contant_place">
-              <Link to="/ImageSlider">
-                <img
-                  className="Place_contant_img"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTP4KyHavTvldxZg_XFcvxWV0Y2tpgX62_2w&usqp=CAU"
-                  alt="img"
-                />
-              </Link>
-              <span className="Places_contant_counts">9</span>
-            </div>
-            <h3 className="Places_contant_sub">Pakkasuran malai View </h3>
+            
+            <h4 className="Places_contant_sub">More places are arriving soon.</h4>
           </div>
 
-          <div>
-            <div className="Place_contant_place">
-              <Link to="/ImageSlider">
-                <img
-                  className="Place_contant_img"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTP4KyHavTvldxZg_XFcvxWV0Y2tpgX62_2w&usqp=CAU"
-                  alt="img"
-                />
-              </Link>
-              <span className="Places_contant_counts">10</span>
-            </div>
-            <h3 className="Places_contant_sub">Pakkasuran malai View </h3>
-          </div>
+          
         </div>
       </div>
       <div>
