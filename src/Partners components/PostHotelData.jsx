@@ -7,8 +7,10 @@ import AWS from "aws-sdk";
 
 AWS.config.update({
   region: process.env.REACT_APP_AWS_REGION,
-  accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+  credentials: {
+    accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+  },
 });
 
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
@@ -79,8 +81,7 @@ const PostHotelData = () => {
     fetchLastUpdatedId();
   }, []);
 
-const strId = lastUpdatedId;
-const newId = Number(strId);
+  const newId = lastUpdatedId ? Number(lastUpdatedId) + 1 : null;
 
 
   return (
@@ -94,7 +95,7 @@ const newId = Number(strId);
             <input
               type="number"
               name="id"
-              value={newId + 1}
+              value={newId}
               onChange={handleChange}
               required
               
@@ -132,7 +133,7 @@ const newId = Number(strId);
               required
             />
           </label>
-          <button type="submit" className="Hotel_Post_Btn">Post Data</button>
+          <button type="submit" className="Hotel_Post_Btn">Post My Hotel</button>
         </form>
       </div>
     </>

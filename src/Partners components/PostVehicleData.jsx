@@ -7,8 +7,10 @@ import AWS from "aws-sdk";
 
 AWS.config.update({
   region: process.env.REACT_APP_AWS_REGION,
-  accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+  credentials: {
+    accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+  },
 });
 
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
@@ -58,7 +60,9 @@ const PostVehicleData = () => {
 
     try {
       const data = await dynamoDB.scan(params).promise();
-      return data.Items.length > 0 ? data.Items[data.Items.length - 1].id : null;
+      return data.Items.length > 0
+        ? data.Items[data.Items.length - 1].id
+        : null;
     } catch (error) {
       console.error("Error querying DynamoDB:", error);
       return null;
@@ -84,12 +88,12 @@ const PostVehicleData = () => {
       <div className="Post_Hotel_Data">
         <form onSubmit={handleSubmit} className="Post_Hotel_Data_Content">
           <label>
-            Vehicle id 
+            Vehicle id
             <br />
             <input
               type="text"
               name="id"
-              value={newId + 1}
+              value={String(newId)}
               onChange={handleChange}
               required
             />
@@ -124,9 +128,12 @@ const PostVehicleData = () => {
               value={vehicleData.number}
               onChange={handleChange}
               required
+              placeholder="1234567890"
             />
           </label>
-          <button type="submit" className="Hotel_Post_Btn">Post My Vehicle</button>
+          <button type="submit" className="Hotel_Post_Btn">
+            Post My Vehicle
+          </button>
         </form>
       </div>
     </>

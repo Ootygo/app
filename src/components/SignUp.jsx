@@ -30,7 +30,7 @@ export default function SignUp() {
               checked={termsAccepted}
               onChange={(e) => setTermsAccepted(e.target.checked)}
             />
-            <Link to="/Terms">SLA, Terms & Conditions</Link>
+            <Link to="/Terms">SLA, Terms & Conditions, Privacy Policy</Link>
             {termsAccepted ? null : (
               <div className="Terms_agree">
                 <span>

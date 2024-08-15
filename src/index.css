@@ -4,6 +4,7 @@ body {
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 1348px;
   width: 100%;
 }
 body::-webkit-scrollbar {

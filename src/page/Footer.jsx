@@ -47,13 +47,14 @@ function Footer() {
           <div className="Footer_email">
             <h2 className="Footer_email_title">Email Us</h2>
             <div className="Footer_email_contant">
-              <h4 itemType="Email Emailus_hover">ootygo.official@gmail.com</h4>
-              <h4 itemType="Email Emailus_hover">admin@ootygo.in</h4>
+              <h4 className="Email Emailus_hover">ootygo.official@gmail.com</h4>
+              <h4 className="Email Emailus_hover">admin@ootygo.in</h4>
               <h4>© 2023, Ootygo Technologies</h4>
-
               <Link to="/About" className="About_link Emailus_hover">
                 <h4 >About Us</h4>
               </Link>
+              <Link to="/Terms" className="About_link Emailus_hover"><h4>SLA, Terms & Conditions, Privacy Policy</h4></Link>
+              
             </div>
           </div>
         </div>

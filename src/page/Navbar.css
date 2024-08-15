@@ -63,7 +63,10 @@
 .ib {
   width: 10px;
 }
-
+.Navbar_flag{
+  height: 50px;
+  margin-left: 10px;
+}
 @media only screen and (max-width: 900px) {
   .Navbar_menu_item {
     font-size: 10px;
@@ -75,6 +78,10 @@
   .Navbar_menu_item > svg {
     height: 20px;
     width: 20px;
+  }
+  .Navbar_flag{
+    margin: 10px 0 0 0;
+    height: 40px;
   }
   .Navbar_menu2_logo {
     height: 50px;
