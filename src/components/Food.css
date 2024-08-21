@@ -89,7 +89,7 @@
 }
 @media only screen and (max-width: 450px) {
   .Food_contant_img {
-    width: 300px;
-    height: 250px;
+    width: 250px;
+    height: 200px;
   }
 }

@@ -13,7 +13,7 @@ import { PiVanBold } from "react-icons/pi";
 import { IoIosRestaurant } from "react-icons/io";
 import { useState, useEffect } from "react";
 import logo from "../logo.png";
-import flag from "../assets/images/flag.png"
+
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,7 +54,7 @@ function Navbar() {
           <Link to="/">
             <span>
               <img className="Navbar_menu2_logo" src={logo} alt="logo" />
-              <img className="Navbar_flag" src={flag} alt="flag" />
+              
             </span>
           </Link>
         </span>

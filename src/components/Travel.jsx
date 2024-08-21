@@ -8,6 +8,8 @@ import { MdAddIcCall } from "react-icons/md";
 import AWS from "aws-sdk";
 import { useAuthenticator } from "@aws-amplify/ui-react";
 import "../components/Stay.css";
+import { MdOutlineChair } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
 export default function Travel() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -52,68 +54,121 @@ export default function Travel() {
   };
 
   const shuffledData = shuffleHotel([...data]);
+
+  // Search
+  const [searchTerm, setSearchTerm] = useState("");
+  const [search, setSearched] = useState(false);
+  const [filteredItems, setFilteredItems] = useState([]);
+  const items = data; //items is assigned from data
+
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearch = () => {
+    const results = items.filter(
+      (item) => item.name.toLowerCase().includes(searchTerm.toLowerCase()) //filtering based on item.name
+    );
+    setFilteredItems(results);
+    setSearched(true);
+  };
   return (
     <>
       <Navbar />
       <div className="Travel_contant">
         <div className="Travel_contant_item">
           <h1 className="Travel_contant_title">Book Vehicles For Your Trip</h1>
-          <form action="submit">
-            <div className="Travel_contant_search">
-              <div>
-                <h4 className="Travel_contant_search_title">Package</h4>
 
-                <select
-                  name="Package"
-                  id="pack"
-                  className="Travel_contant_location"
-                >
-                  <option value="">Select</option>
-                  <option value="pac">1 Day Trip</option>
-                  <option value="pac">2 Day Trip</option>
-                  <option value="pac">3 Day Trip</option>
-                  <option value="pac">Couple special</option>
-                  <option value="pac">Family Frindly</option>
-                  <option value="pac">Gang Trip</option>
-                  <option value="pac">School & College</option>
-                </select>
-              </div>
-              <div>
-                <h4 className="Travel_contant_search_title">Date</h4>
-                <input type="date" className="Travel_contant_date" />
-              </div>
+          <div className="Travel_contant_search">
+            <div>
+              <input
+                type="text"
+                placeholder="Search..."
+                value={searchTerm}
+                onChange={handleInputChange}
+              />
+              <button onClick={handleSearch} className="Travel_Search_Btn"><FaSearch /></button>
             </div>
-            <div className="Travel_contant_search_btns">
-              <button className="Travel_contant_search_btn" type="submit">
-                Search
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
         <div className="Travel_vehicles">
+          {/* Search Results */}
+          {search ? (
+            <div>
+              <h2 className="Travel_Search_Title">Search Results</h2>
+              <ul className="Travel_Search_Result">
+                {" "}
+                {filteredItems.map(({ name, imgurl, number, sitting }, index) => (
+                  <li key={index}>
+                    <img
+                      src={imgurl}
+                      alt="test-img"
+                      className="Stay_hotel_img"
+                    />
+                    <h3 className="Stay_hotel_title">{name}</h3>
+                    <span className="Travel_sitting_capacity"><MdOutlineChair />{sitting}</span>
+                    <span>
+                      {user ? (
+                        <button
+                          onClick={() =>
+                            (window.location.href = `tel:${number}`)
+                          }
+                          className="Travel_call_Btn"
+                        >
+                          Call: {number}
+                        </button>
+                      ) : (
+                        <span className="Travel_call_btn">
+                          <MdAddIcCall onClick={handleClick} />
+                        </span>
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
           <h2 className="Travel_vehicles_title">
             Our Authorized Travel Partners
           </h2>
-          <div className="Stay_contant">
-            
-            <div className="Stay_contant_Hotels">
-              {shuffledData.map(({ name, imgurl, number }, index) => (
-                <div key={index}>
-                  <img src={imgurl} alt="test-img" className="Stay_hotel_img" />
-                  <h3 className="Stay_hotel_title">{name}</h3>
-                  <span>
-                    {user ? (
-                      <span>Ph.{number}</span>
-                    ) : (
-                      <span className="Travel_call_btn">
-                        <MdAddIcCall onClick={handleClick} />
-                      </span>
-                    )}
-                  </span>
+          <div className="Travel_contant">
+            {data ? (
+              <div className="Travel_contant_Vehicle">
+                {shuffledData.map(({ name, imgurl, number }, index) => (
+                  <div key={index} className="Travel_contant_Vehicles">
+                    <img
+                      src={imgurl}
+                      alt="test-img"
+                      className="Stay_hotel_img"
+                    />
+                    <h3 className="Stay_hotel_title">{name}</h3>
+                    <span>
+                      {user ? (
+                        <button
+                          onClick={() =>
+                            (window.location.href = `tel:${number}`)
+                          }
+                          className="Travel_call_Btn"
+                        >
+                          Call:{number}
+                        </button>
+                      ) : (
+                        <span className="Travel_call_btn">
+                          <MdAddIcCall onClick={handleClick} />
+                        </span>
+                      )}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="loading-container">
+                <div className="loading-spinner">
+                  <div className="loading_spinner_negative"></div>
                 </div>
-              ))}
-            </div>
-            <div className="Stay_data"></div>
+              </div>
+            )}
           </div>
         </div>
       </div>

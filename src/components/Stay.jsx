@@ -3,13 +3,12 @@ import Navbar from "../page/Navbar";
 import Footer from "../page/Footer";
 import React, { useState, useEffect } from "react";
 import AWS from "aws-sdk";
-
+import "./Travel.css";
 // Initialize AWS SDK
 AWS.config.update({
   region: process.env.REACT_APP_AWS_REGION,
   accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
   secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
-  
 });
 export default function Stay() {
   useEffect(() => {
@@ -47,16 +46,23 @@ export default function Stay() {
       <Navbar />
       <div className="Stay_contant">
         <h1 className="Stay_contant_title">Top 10 Hotels</h1>
-        <div className="Stay_contant_Hotels">
-          {shuffledData.map(({ name, imgurl, rate }, index) => (
-            <div key={index}>
-              <img src={imgurl} alt="test-img" className="Stay_hotel_img" />
-              <h3 className="Stay_hotel_title">{name}</h3>
-              <span>₹{rate}</span>
+        {data ? (
+          <div className="Stay_contant_Hotels">
+            {shuffledData.map(({ name, imgurl, rate }, index) => (
+              <div key={index}>
+                <img src={imgurl} alt="test-img" className="Stay_hotel_img" />
+                <h3 className="Stay_hotel_title">{name}</h3>
+                <span>₹{rate}</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="loading-container">
+            <div className="loading-spinner">
+              <div className="loading_spinner_negative"></div>
             </div>
-          ))}
-        </div>
-        <div className="Stay_data"></div>
+          </div>
+        )}
       </div>
 
       <Footer />

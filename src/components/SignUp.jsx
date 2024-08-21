@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { Authenticator, CheckboxField } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import { Amplify } from "aws-amplify";
@@ -14,7 +14,7 @@ export default function SignUp() {
     window.scrollTo(0, 0);
   }, []);
 
-  const [termsAccepted, setTermsAccepted] = useState(false);
+
 
   const components = {
     SignUp: {
@@ -27,17 +27,11 @@ export default function SignUp() {
               label="I agree to the terms and conditions"
               name="terms"
               value="yes"
-              checked={termsAccepted}
-              onChange={(e) => setTermsAccepted(e.target.checked)}
+              
+              required
             />
             <Link to="/Terms">SLA, Terms & Conditions, Privacy Policy</Link>
-            {termsAccepted ? null : (
-              <div className="Terms_agree">
-                <span>
-                  <b>Agree & Create Account</b>
-                </span>
-              </div>
-            )}
+            
           </>
         );
       },
@@ -66,7 +60,7 @@ export default function SignUp() {
                   </div>
                   <div className="Signup_Partners">
                     <Link to="/Partners">
-                      <button>Partner</button>
+                      <button className="Signin_btns">Partner</button>
                     </Link>
                   </div>
                 </main>

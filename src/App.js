@@ -22,7 +22,7 @@ import Terms from "./components/sub components/Terms";
 const App = () => {
   return (
     <>
-      <div>
+      <div className="App">
         <Authenticator.Provider>
           <Routes>
             <Route exact path="/" element={<Home />} />

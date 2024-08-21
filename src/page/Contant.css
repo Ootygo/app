@@ -12,9 +12,22 @@
   overflow-y: hidden;
   font-family: "Poppins", sans-serif;
 }
-.Contant_1,
-.Contant_2 {
-  margin-top: 5px;
+.Contant_1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-left: 80px;
+  padding-top: 20px;
+  cursor: pointer;
+  width: 100vw;
+  position: relative;
+}
+.Contant_img:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+  z-index: 5;
 }
 .Contant_img {
   height: 300px;
@@ -23,44 +36,9 @@
   box-shadow: 5px 10px 10px;
   cursor: pointer;
 }
-.Contant_video {
-  height: 500px;
-  width: 700px;
-  filter: drop-shadow(5px 10px 5px black);
-  border-radius: 50px;
-  margin: 10px;
-  position: absolute;
-  z-index: 2;
-  left: 35%;
-  top: 10%;
-  border-radius: 10px;
-  border: 5px solid rgba(91, 168, 91, 0.578);
-}
-.Contant_video:hover{
-    z-index: 4;
-}
-.Contant_video_inactive{
-  display: none;
-}
-.Contant_video_active{
-  display: unset;
-  z-index: 5;
-  border: none;
-  border-radius: 10px;
-  background-color: black;
-  color: white;
-  cursor: pointer;
-  text-align: center;
-  position: absolute;
-  right: -500px;
-  height: 40px;
-  width: 40px;
-  font-size: 30px;
-}
-.Contant_img:checked {
-  transform: scale(1.1);
-  transition: 150ms;
-}
+
+
+
 .Contant_Title {
   color: white;
   margin-left: 100px;
@@ -73,16 +51,50 @@
   font-family: "Poppins", sans-serif;
 }
 
+.Video_contant_play{
+  height: 300px;
+  width: 400px;
+ 
+  display: unset;
+  z-index: 5;
+  position: absolute;
+  border: 5px solid gray;
+}
+.Video_contant_play>iframe{
+  height: 300px;
+  width: 100vh;
+}
+.Video_contant_play>button{
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+.Video_contant_stop{
+  display: none;
+}
+.loading-overlay{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.Contant_Higlights{
+  height: 150px;
+  width: 250px;
+  border: 10px solid black;
+  border-radius: 10px;
+}
+.Contant_Higlights:hover{
+  transform: scale(1.3);
+  
+}
 @media only screen and (max-width: 900px) {
   .Contant_img {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
   }
-  .Contant_video {
-    height: 250px;
-    width: 300px;
-    left: 10px;
-    top: 0;
+  .Contant_1{
+    padding-left: 0px;
   }
   .Contant_Title {
     color: white;
@@ -101,5 +113,9 @@
     height: 30px;
     width: 30px;
     font-size: 20px;
+  }
+  .Video_contant_play{
+    width: 400px;
+    height: 400px;
   }
 }

@@ -39,7 +39,7 @@
   cursor: pointer;
   font-weight: 600;
   padding: 10px;
-  width:150px;
+  width:100px;
 }
 .Signup_section{
   height: fit-content;
@@ -69,7 +69,10 @@
 .Terms_agree:hover{
   background-color: rgb(255, 0, 0);
 }
-
+.Signin_btns{
+  padding: 10px;
+  background-color:  hsl(190, 95%, 30%);
+}
 @media only screen and (max-width :900px) {
   .Signup_contant{
     padding-top: 75px;

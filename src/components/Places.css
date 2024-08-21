@@ -41,6 +41,7 @@
 }
 .Place_contant_place {
   position: relative;
+  min-width: 200px;
 }
 .Places_contant_counts {
   position: absolute;

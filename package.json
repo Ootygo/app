@@ -25,6 +25,7 @@
     "react": "^18.2.0",
     "react-countdown": "^2.3.5",
     "react-dom": "^18.2.0",
+    "react-hover-video-player": "^10.0.2",
     "react-icons": "^5.2.1",
     "react-idle-timer": "^5.7.2",
     "react-router": "^6.22.3",
