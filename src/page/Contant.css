@@ -6,7 +6,7 @@
 
 .Cantant {
   height: auto;
-  /* background-color: #333; */
+  background-color: #333333c6;
   display: flex;
   justify-content: space-evenly;
   overflow-y: hidden;

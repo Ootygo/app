@@ -1,6 +1,6 @@
 .Timebar_contant{
   margin-top: 0px;
-  /* background-color: black; */
+  background-color: #333333c6;
   display: flex;
   justify-content: center;
   align-items: center;  
@@ -30,10 +30,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #333333c6;
 }
 .Timebar_time_3{
   color: #fdfafa;
-  background-color:rgba(159, 157, 157, 0.697);
+  background-color: #333333;
   border-radius: 10px;
   padding: 10px;
   font-family: "Poppins", sans-serif;
@@ -60,10 +61,12 @@
 
  }
  .Timebar_time_3{
-    font-size: 10px;
+    font-size: 25px;
     padding: 5px;
  }
-
+.Timebar_contant_2{
+  margin-top: 600px;
+}
 }
 .Regi_time{
   display: flex;

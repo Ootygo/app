@@ -1,5 +1,5 @@
 .Home_body{
-    background-image: url('https://wallpapercave.com/dwp1x/wp3500254.jpg' );
+    background-image: url('../assets/background.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     /* background-color: rgb(0, 0, 0); */
@@ -13,6 +13,7 @@
 }
 .Home_video_container{
     position: relative;
+    background-color: #333333c6;
 }
 .Home_video_titel{
     position: absolute;
@@ -28,14 +29,14 @@
 }
 .Home_video{
     background-color: black;
-    
+    height: 700px;
     object-fit: cover;
-    box-shadow: 1px 8px 10px black;
+    
 }
 
 @media only screen and (max-width:900px){
-    .Home_video{height: 700px;}
+    .Home_video{height: 750px;}
     .Home_video_titel{font-size: 20px; top: 35%; left: 25%;}
     
-    
+ 
 }

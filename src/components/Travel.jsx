@@ -115,7 +115,7 @@ export default function Travel() {
                           }
                           className="Travel_call_Btn"
                         >
-                          Call: {number}
+                          <MdAddIcCall/>{number}
                         </button>
                       ) : (
                         <span className="Travel_call_btn">
