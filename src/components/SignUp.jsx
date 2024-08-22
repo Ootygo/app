@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { Authenticator, CheckboxField } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import { Amplify } from "aws-amplify";
@@ -7,31 +7,38 @@ import awsExports from "../aws-exports";
 import Navbar from "../page/Navbar";
 import Footer from "../page/Footer";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 Amplify.configure(awsExports);
 
 export default function SignUp() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const navigate = useNavigate();
 
-
-
+  const handleClick = () => {
+    navigate("/Partners");
+  };
   const components = {
     SignUp: {
       FormFields() {
         return (
           <>
             <Authenticator.SignUp.FormFields />
-
-            <CheckboxField
-              label="I agree to the terms and conditions"
-              name="terms"
-              value="yes"
-              
-              required
-            />
-            <Link to="/Terms">SLA, Terms & Conditions, Privacy Policy</Link>
-            
+            <div>
+              <span className="Terms_Link">
+                <CheckboxField
+                  label="I agree to the following"
+                  name="terms"
+                  value="yes"
+                  required
+                />
+              </span>
+              <span className="Terms_Link">
+                <Link to="/Terms">SLA, Terms & Conditions, Privacy Policy</Link>
+              </span>
+            </div>
           </>
         );
       },
@@ -54,14 +61,12 @@ export default function SignUp() {
                   <div className="User_Profile_Section">
                     <button className="Signin_btns">My bookings</button>
                     <button className="Signin_btns">Support</button>
+                    <button className="Signin_btns" onClick={handleClick}>
+                      Partner
+                    </button>
                     <button onClick={signOut} className="Signin_btns">
                       Sign out
                     </button>
-                  </div>
-                  <div className="Signup_Partners">
-                    <Link to="/Partners">
-                      <button className="Signin_btns">Partner</button>
-                    </Link>
                   </div>
                 </main>
               </>

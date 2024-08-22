@@ -44,17 +44,19 @@ function Contant() {
       <div className="Cantant">
         <div className="Contant_1">
           <div className="kavi">
-            <div className="Stay_contant_Hotels">
+            <div className="Contant_Highlight">
               {shuffledData.map(({ name, imgurl, video }, index) => (
                 <div key={index}>
                   <div className="Contant_Higlights">
                     <HoverVideoPlayer
                       videoSrc={video}
                       crossOrigin="anonymous"
+                      className="custom-video-player"
                       pausedOverlay={
                         <img
                           src={imgurl}
                           alt=""
+                          
                           style={{
                             width: "100%",
                             height: "100%",
@@ -70,7 +72,7 @@ function Contant() {
                     />
                   </div>
 
-                  <h3 className="Stay_hotel_title">{name}</h3>
+                  <h3 className="Contant_item_title">{name}</h3>
                 </div>
               ))}
             </div>

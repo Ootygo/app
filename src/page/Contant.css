@@ -12,7 +12,16 @@
   overflow-y: hidden;
   font-family: "Poppins", sans-serif;
 }
-.Contant_1{
+.Contant_Highlight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.Contant_1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +33,7 @@
   width: 100vw;
   position: relative;
 }
-.Contant_img:hover{
+.Contant_img:hover {
   transform: scale(1.1);
   transition: 0.5s;
   z-index: 5;
@@ -37,8 +46,6 @@
   cursor: pointer;
 }
 
-
-
 .Contant_Title {
   color: white;
   margin-left: 100px;
@@ -50,50 +57,53 @@
   padding: 5px;
   font-family: "Poppins", sans-serif;
 }
-
-.Video_contant_play{
+.Contant_item_title {
+  text-align: center;
+  color: white;
+  background-color: rgba(128, 128, 128, 0.797);
+  border-radius: 10px;
+  margin: unset;
+}
+.Video_contant_play {
   height: 300px;
   width: 400px;
- 
+
   display: unset;
   z-index: 5;
   position: absolute;
   border: 5px solid gray;
 }
-.Video_contant_play>iframe{
-  height: 300px;
-  width: 100vh;
-}
-.Video_contant_play>button{
-  position: absolute;
-  top: -5px;
-  right: -5px;
-}
-.Video_contant_stop{
-  display: none;
-}
-.loading-overlay{
+.loading-overlay {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
-.Contant_Higlights{
+.Contant_Higlights {
   height: 150px;
   width: 250px;
-  border: 10px solid black;
-  border-radius: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
-.Contant_Higlights:hover{
-  transform: scale(1.3);
-  
+.Contant_Higlights:hover {
+  transform: scale(1.2);
+}
+.custom-video-player {
+  border: 5px solid #4caf50;
+  border-radius: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.custom-video-player:hover {
+  z-index: 10;
 }
 @media only screen and (max-width: 900px) {
   .Contant_img {
     height: 200px;
     width: 200px;
   }
-  .Contant_1{
+  .Contant_1 {
     padding-left: 0px;
   }
   .Contant_Title {
@@ -108,14 +118,17 @@
     font-size: 20px;
     font-weight: 100;
   }
-  .Contant_video_active{
+  .Contant_video_active {
     right: -150px;
     height: 30px;
     width: 30px;
     font-size: 20px;
   }
-  .Video_contant_play{
+  .Video_contant_play {
     width: 400px;
     height: 400px;
+  }
+  .Contant_Highlight {
+    gap: 5px;
   }
 }

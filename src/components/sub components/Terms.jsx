@@ -36,7 +36,7 @@ export default function Terms() {
           <p>
             Customers can cancel their bookings up to 10 days before the tour
             date for a full refund. Cancellations within 5 days will incur a 50%
-            fee.
+            fee. Refunds will be credited within 2 working days.
           </p>
 
           <h4>Changes to Bookings</h4>
@@ -96,16 +96,12 @@ export default function Terms() {
           hours from the time of reporting. <h4>5. Security and Compliance</h4>{" "}
           • Data Security: OotyGo complies with GDPR to ensure the security of
           customer data. <br /> • Fraud Prevention: Continuous monitoring and
-          fraud detection mechanisms are in place.{" "}
-          <h4>6. Penalties and Remedies</h4> • Service Credits: If OotyGo fails
-          to meet the uptime guarantee, customers will receive a 5% discount on
-          their next booking.
-          <h4>7. Responsibilities</h4> • OotyGo: Ensure the platform is
-          operational and provide timely support. <br /> • Customers: Provide
-          accurate information and comply with the terms of service.{" "}
-          <h4>8. Amendments</h4> • Amendment Procedure: This SLA may be amended
-          with mutual consent of both parties. Any amendments will be
-          communicated in Email.
+          fraud detection mechanisms are in place. <h4>6. Responsibilities</h4>{" "}
+          • OotyGo: Ensure the platform is operational and provide timely
+          support. <br /> • Customers: Provide accurate information and comply
+          with the terms of service. <h4>7. Amendments</h4> • Amendment
+          Procedure: This SLA may be amended with mutual consent of both
+          parties. Any amendments will be communicated in Email.
         </p>
         <p>
           <hr />
@@ -161,8 +157,8 @@ export default function Terms() {
             Cookies are small files stored on your device that help us
             understand how you use our website and improve our services.
           </p>
-          <p>
-            Data Security We implement appropriate security measures to protect
+          
+          <h4>Data Security</h4><p>We implement appropriate security measures to protect
             your personal information from unauthorized access, alteration,
             disclosure, or destruction.
           </p>
