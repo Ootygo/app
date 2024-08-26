@@ -25,9 +25,10 @@
   color: white;
   margin-left: 30px;
   text-align: center;
+  padding-bottom: 20px;
 }
 .Stay_hotel_title {
-  color: white;
+  margin-top: 15px;
 }
 .Stay_data {
   margin-left: 90px;
@@ -42,7 +43,38 @@
   transform: scale(1.1);
   transition: 0.3s;
 }
-
+.Stay_Amenity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.Stay_Amenity_items {
+  display: flex;
+  gap: 5px;
+  position: relative;
+}
+.Stay_Amenity_items > svg {
+  height: 30px;
+  width: 30px;
+}
+.Stay_hotel_call {
+  background-color: rgb(30, 255, 0);
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  width: 40px;
+  padding-bottom: 0;
+  cursor: pointer;
+  margin: 5px;
+  transform: translate(40px, -20px);
+}
+.Stay_hotel_call:hover {
+  background-color: rgba(6, 132, 210, 0.88);
+  transition: 0.3s;
+  color: white;
+  font-weight: 500;
+}
 .loading {
   animation: loadanimation 2.5s infinite linear;
   height: 90px;
@@ -60,6 +92,61 @@
   border-radius: 50px 10px 50px 10px;
   display: block;
   background-color: rgb(0, 0, 0);
+}
+.Stay_Hotels_items {
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  box-shadow: 2px 5px 5px gray;
+  padding: 10px;
+}
+/* Slider */
+.slider-container {
+  width: 280px;
+  height: 210px;
+  margin: 5px;
+  position: relative;
+}
+
+img {
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+
+
+.Stay_Slide_img {
+  width: 280px;
+  height: 200px;
+  z-index: 2;
+}
+.slick-dots {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots li button:before {
+  font-size: 12px; /* Adjust size */
+  color: blue; /* Change color */
+}
+
+.slick-dots li.slick-active button:before {
+  color: red; /* Change active dot color */
+}
+.slick-prev, .slick-next {
+  width: 30px;
+  height: 30px;
+  z-index: 4; /* Increase z-index */
 }
 @keyframes loadanimation {
   0% {
@@ -102,7 +189,10 @@
   .loading_section {
     padding-top: 50px;
   }
-  .Stay_contant_Hotels{
+  .Stay_contant_Hotels {
     margin-left: 5px;
+  }
+  .Stay_contant_Hotels {
+    width: 250px;
   }
 }

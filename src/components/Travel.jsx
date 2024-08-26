@@ -10,6 +10,7 @@ import { useAuthenticator } from "@aws-amplify/ui-react";
 import "../components/Stay.css";
 import { MdOutlineChair } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
+
 export default function Travel() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -59,7 +60,7 @@ export default function Travel() {
   const [searchTerm, setSearchTerm] = useState("");
   const [search, setSearched] = useState(false);
   const [filteredItems, setFilteredItems] = useState([]);
-  const items = data; //items is assigned from data
+  const items = data;
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
@@ -67,7 +68,10 @@ export default function Travel() {
 
   const handleSearch = () => {
     const results = items.filter(
-      (item) => item.name.toLowerCase().includes(searchTerm.toLowerCase()) //filtering based on item.name
+      (item) =>
+        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.number.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.sitting.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredItems(results);
     setSearched(true);
@@ -87,7 +91,9 @@ export default function Travel() {
                 value={searchTerm}
                 onChange={handleInputChange}
               />
-              <button onClick={handleSearch} className="Travel_Search_Btn"><FaSearch /></button>
+              <button onClick={handleSearch} className="Travel_Search_Btn">
+                <FaSearch />
+              </button>
             </div>
           </div>
         </div>
@@ -98,33 +104,39 @@ export default function Travel() {
               <h2 className="Travel_Search_Title">Search Results</h2>
               <ul className="Travel_Search_Result">
                 {" "}
-                {filteredItems.map(({ name, imgurl, number, sitting }, index) => (
-                  <li key={index}>
-                    <img
-                      src={imgurl}
-                      alt="test-img"
-                      className="Stay_hotel_img"
-                    />
-                    <h3 className="Stay_hotel_title">{name}</h3>
-                    <span className="Travel_sitting_capacity"><MdOutlineChair />{sitting}</span>
-                    <span>
-                      {user ? (
-                        <button
-                          onClick={() =>
-                            (window.location.href = `tel:${number}`)
-                          }
-                          className="Travel_call_Btn"
-                        >
-                          <MdAddIcCall/>{number}
-                        </button>
-                      ) : (
-                        <span className="Travel_call_btn">
-                          <MdAddIcCall onClick={handleClick} />
-                        </span>
-                      )}
-                    </span>
-                  </li>
-                ))}
+                {filteredItems.map(
+                  ({ name, imgurl, number, sitting }, index) => (
+                    <li key={index}>
+                      <img
+                        src={imgurl}
+                        alt="test-img"
+                        className="Stay_hotel_img"
+                      />
+                      <h3 className="Stay_hotel_title">{name}</h3>
+                      <span className="Travel_sitting_capacity">
+                        <MdOutlineChair />
+                        {sitting}
+                      </span>
+                      <span>
+                        {user ? (
+                          <button
+                            onClick={() =>
+                              (window.location.href = `tel:${number}`)
+                            }
+                            className="Travel_call_Btn"
+                          >
+                            <MdAddIcCall />
+                            {number}
+                          </button>
+                        ) : (
+                          <span className="Travel_call_btn">
+                            <MdAddIcCall onClick={handleClick} />
+                          </span>
+                        )}
+                      </span>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           ) : null}

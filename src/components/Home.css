@@ -11,6 +11,11 @@
     scroll-behavior: smooth;
 
 }
+@media (max-width: 480px) {
+    .Home_body{
+      background-size: 100% 100%;
+    }
+  }
 .Home_video_container{
     position: relative;
     background-color: #333333c6;

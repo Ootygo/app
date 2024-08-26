@@ -93,7 +93,7 @@ const ImageSlider = () => {
             Pakkasuran Malai also known as Droog Fort, is a historic site
             located near Coonoor in the Nilgiris district of Tamil Nadu. It’s
             about 15 kilometers from Coonoor and is known for its scenic beauty
-            and panoramic views1. The fort was used as an outpost by Tipu Sultan
+            and panoramic views. The fort was used as an outpost by Tipu Sultan
             in the 18th century, and today, it’s a popular spot for trekking and
             sightseeing
           </p>
