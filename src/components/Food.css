@@ -19,9 +19,14 @@
   padding-left: 50px;
 }
 .Food_contant_items {
-  max-width: 200px;
-  
+  width: 300px;
+  height: 350px;
+  background-color: rgb(211, 208, 208);
   cursor: pointer;
+  color: rgb(0, 0, 0);
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 2px 5px 5px gray;
 }
 .Food_contant_items>a{
   text-decoration: unset;
@@ -35,14 +40,17 @@
   margin-left: 100px;
 }
 .Food_contant_Item_title {
-  color: white;
+  color: rgb(0, 0, 0);
   height: 60px;
+  margin: 0;
 }
 .Food_contant_img {
   height: 200px;
-  width: 200px;
+  width: 250px;
   border-radius: 10px;
   border: 2px solid grey;
+  margin: 5px;
+  margin-left: 15px;
 }
 .Food_Hotel_Menu_Btn {
   border: none;
@@ -53,6 +61,7 @@
   display: grid;
   align-items: center;
   justify-content: center;
+  width: 100px;
 }
 .Food_Hotel_Menu_Btn:hover{
   background-color: greenyellow;
@@ -68,17 +77,27 @@
 }
 .Food_hotel_rating {
   margin: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 .Food_hotel_rating > svg {
   color: gold;
 }
 .Food_hotel_rating >span> a> svg {
-  color: rgb(255, 0, 0);
+  color: rgb(33, 32, 32);
   height: 25px;
   width: 25px;
   
   padding: 1px;
   margin-left: 5px;
+}
+.Food_hotel_rating>span>a{
+  background-color: rgb(30, 255, 0);
+  
+}
+.Food_hotel_rating>span:hover{
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 @media only screen and (max-width: 900px) {
   .Food_contant {
@@ -94,14 +113,15 @@
     margin-left: 0;
     padding-bottom: 10px;
     gap: 10px;
-    padding-left: 30px;
-    justify-content: flex-start;
+    padding-left: 15px;
+    
   }
   .Food_contant_items {
-    width: 100%;
+    width: 300px;
+    
   }
   .Food_contant_item {
-    gap: 5px;
+    gap: 15px;
   }
 }
 @media only screen and (max-width: 450px) {

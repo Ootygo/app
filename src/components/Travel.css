@@ -13,20 +13,18 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 .Travel_contant_Vehicles {
-  height: 320px;
-}
-.Travel_call_Btn {
-  background-color: rgba(128, 128, 128, 0.693);
-  color: white;
-  cursor: pointer;
+  height: 300px;
+  background-color: rgb(211, 208, 208);
+  color: black;
+  padding: 9px;
   border-radius: 5px;
-  outline: unset;
-  border: unset;
+  box-shadow: 2px 5px 5px gray;
 }
+
 .Travel_contant_title {
   color: white;
   padding: 5px;
@@ -42,6 +40,9 @@
   gap: 10px;
   flex-wrap: wrap;
   margin-left: 50px;
+}
+.Travel_Vehicle_title {
+  margin: 0;
 }
 .Travel_contant_search_title {
   color: white;
@@ -84,6 +85,7 @@
 }
 .Travel_vehicles_title {
   color: white;
+  margin: 0;
 }
 .Travel_vehicles {
   padding-left: 60px;
@@ -102,28 +104,32 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.Travel_vehicle_item > img:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
-}
+
 .Travel_vehicle_item > h3 > span > svg {
   color: rgba(0, 0, 255, 0.854);
   margin-left: 5px;
 }
 .Travel_call_btn {
-  padding: 10px;
-  margin: 5px;
-  background-color: rgba(128, 128, 128, 0.629);
+  background-color: rgb(30, 255, 0);
+  padding: 5px;
   border-radius: 5px;
+  text-align: center;
+  width: 40px;
+  position: absolute;
   cursor: pointer;
+  margin: 5px;
+  transform: translate(170px, -25px);
 }
 .Travel_call_btn > svg {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 .Travel_call_btn:hover {
-  background-color: gray;
-  transition: 0.5s;
+  background-color: rgba(6, 132, 210, 0.88);
+  transition: 0.3s;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
 }
+
 .loading-container {
   display: flex;
   justify-content: center;
@@ -134,7 +140,7 @@
 
 .loading-spinner {
   border: 5px solid #078bc9;
-  border-top:  5px solid black;
+  border-top: 5px solid black;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -142,41 +148,86 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
-.Travel_Search_Title{
+.Travel_Search_Title {
   color: white;
-}.Travel_Search_Result{
+}
+.Travel_Search_Result {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
   justify-content: center;
 }
-.Travel_sitting_capacity{
-  color: white;
+.Travel_sitting_capacity > svg {
+  color: black;
+  height: 20px;
+  width: 20px;
+  
 }
+.Travel_sitting_capacity {
+  color: black;
+  text-align: center;
+  position: relative;
 
-.Travel_Search_Btn{
+}
+.Travel_sitting_capacity>:last-child{
+  margin-left: 10px;
+}
+.Travel_sitting_capacity_items{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Travel_Search_Btn {
   background-color: #078bc9;
   border: none;
   padding: 2px;
- width: 30px;
+  width: 30px;
+  position: absolute;
+  right: -1px;
+  cursor: pointer;
+  height: 40px;
+  border-radius: 0 5px 5px 0;
+  width: 40px;
+}
+.Travel_Search_Btn:hover.Travel_Search_Btn>svg{
+  color: white;
+}
+
+.Vehicle_Search_0 {
+  color: white;
+}
+.Travel_search_bar_item {
+  position: relative;
+}
+.Travel_search_bar {
+  width: 400px;
+  border-radius: 5px;
+  height: 40px;
+}
+
+.Vehicle_Search_0 > img {
+  margin: 5px;
+  margin-left: -30px;
+}
+/* Travel More info */
+
+.Travel_Info{
+  display: unset;
+}
+.Travel_Info_none{
+  display: none;
 }
 @keyframes spin {
   0% {
     transform: rotate(0deg);
-    
   }
-  
+
   100% {
     transform: rotate(360deg);
-    
   }
 }
-
-
-
 
 @media only screen and (max-width: 900px) {
   .Travel_contant {
@@ -227,5 +278,14 @@
   }
   .Travel_vehicle_item > h3 {
     font-size: 20px;
+  }
+  .Travel_call_btn {
+    transform: translate(120px, -5px);
+  }
+  .Travel_search_bar {
+    width: 300px;
+  }
+  .Travel_Search_Result{
+    padding-left: 10px;
   }
 }

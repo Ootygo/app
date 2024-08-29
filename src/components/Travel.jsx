@@ -8,9 +8,10 @@ import { MdAddIcCall } from "react-icons/md";
 import AWS from "aws-sdk";
 import { useAuthenticator } from "@aws-amplify/ui-react";
 import "../components/Stay.css";
-import { MdOutlineChair } from "react-icons/md";
+import { BiChair } from "react-icons/bi";
 import { FaSearch } from "react-icons/fa";
-
+import { SlCallOut } from "react-icons/sl";
+//import { IoMdInformationCircle } from "react-icons/io";
 export default function Travel() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -68,14 +69,17 @@ export default function Travel() {
 
   const handleSearch = () => {
     const results = items.filter(
-      (item) =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.number.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.sitting.toLowerCase().includes(searchTerm.toLowerCase())
+      (item) => item.name.toLowerCase().includes(searchTerm.toLowerCase())
+      // item.number.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      // item.sitting.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      // item.pkg.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredItems(results);
     setSearched(true);
   };
+  //Travel Info
+ // const [info, setInfo] = useState(false);
+
   return (
     <>
       <Navbar />
@@ -84,12 +88,13 @@ export default function Travel() {
           <h1 className="Travel_contant_title">Book Vehicles For Your Trip</h1>
 
           <div className="Travel_contant_search">
-            <div>
+            <div className="Travel_search_bar_item">
               <input
                 type="text"
                 placeholder="Search..."
                 value={searchTerm}
                 onChange={handleInputChange}
+                className="Travel_search_bar"
               />
               <button onClick={handleSearch} className="Travel_Search_Btn">
                 <FaSearch />
@@ -104,75 +109,124 @@ export default function Travel() {
               <h2 className="Travel_Search_Title">Search Results</h2>
               <ul className="Travel_Search_Result">
                 {" "}
-                {filteredItems.map(
-                  ({ name, imgurl, number, sitting }, index) => (
-                    <li key={index}>
-                      <img
-                        src={imgurl}
-                        alt="test-img"
-                        className="Stay_hotel_img"
-                      />
-                      <h3 className="Stay_hotel_title">{name}</h3>
-                      <span className="Travel_sitting_capacity">
-                        <MdOutlineChair />
-                        {sitting}
-                      </span>
-                      <span>
-                        {user ? (
-                          <button
-                            onClick={() =>
-                              (window.location.href = `tel:${number}`)
-                            }
-                            className="Travel_call_Btn"
-                          >
-                            <MdAddIcCall />
-                            {number}
-                          </button>
-                        ) : (
-                          <span className="Travel_call_btn">
-                            <MdAddIcCall onClick={handleClick} />
-                          </span>
-                        )}
-                      </span>
-                    </li>
+                {filteredItems > [""] ? (
+                  filteredItems.map(
+                    ({ name, imgurl, number, sitting, pkg }, index) => (
+                      <li key={index} className="Travel_contant_Vehicles">
+                        <img
+                          src={imgurl}
+                          alt="test-img"
+                          className="Stay_hotel_img"
+                        />
+                        <h3 className="Travel_Vehicle_title">{name}</h3>
+                        <div className="Travel_Rete">
+                          Pkg starts @ <b>{pkg}</b>
+                        </div>
+                        <span className="Travel_sitting_capacity">
+                          <BiChair />
+                          {sitting}
+                        </span>
+
+                        <span>
+                          {user ? (
+                            <span
+                              onClick={() =>
+                                (window.location.href = `tel:${number}`)
+                              }
+                              className="Travel_call_btn"
+                            >
+                              <SlCallOut />
+                            </span>
+                          ) : (
+                            <span
+                              className="Travel_call_btn"
+                              onClick={handleClick}
+                            >
+                              <MdAddIcCall />
+                            </span>
+                          )}
+                        </span>
+                      </li>
+                    )
                   )
+                ) : (
+                  <div>
+                    <span className="Vehicle_Search_0">
+                      <img
+                        src="https://img.freepik.com/free-vector/hand-drawn-no-data-illustration_23-2150544961.jpg?t=st=1724763892~exp=1724767492~hmac=b7873684b161a6acbcd24130da313497c8027905132299eb24138f85a86dcc58&w=740"
+                        alt="Nothing Found"
+                        height="300px"
+                        width="400px"
+                      />
+                    </span>
+                  </div>
                 )}
               </ul>
+              <hr />
             </div>
           ) : null}
 
           <h2 className="Travel_vehicles_title">
             Our Authorized Travel Partners
           </h2>
-          <div className="Travel_contant">
+          <div className="Travel_contants">
             {data ? (
               <div className="Travel_contant_Vehicle">
-                {shuffledData.map(({ name, imgurl, number }, index) => (
-                  <div key={index} className="Travel_contant_Vehicles">
-                    <img
-                      src={imgurl}
-                      alt="test-img"
-                      className="Stay_hotel_img"
-                    />
-                    <h3 className="Stay_hotel_title">{name}</h3>
-                    <span>
-                      {user ? (
+                {shuffledData.map(
+                  ({ name, imgurl, number, sitting, pkg }, index) => (
+                    <div key={index} className="Travel_contant_Vehicles">
+                      <img
+                        src={imgurl}
+                        alt="test-img"
+                        className="Stay_hotel_img"
+                      />
+                      <h3 className="Travel_Vehicle_title">{name}</h3>
+                      <div className="Travel_Rete">
+                        Pkg starts @ <b>{pkg}</b>
+                      </div>
+                      <span className="Travel_sitting_capacity">
+                        <BiChair />
+                        {sitting}
+                          {/* <IoMdInformationCircle
+                            onClick={() => {
+                              setInfo(true);
+                            }}
+                          /> */}
+                      </span>
+                      {/* <span
+                        className={info ? "Travel_Info" : "Travel_Info_none"}
+                      >
+                        1. adkjfhadf
                         <button
-                          onClick={() =>
-                            (window.location.href = `tel:${number}`)
-                          }
-                          className="Travel_call_Btn"
+                          onClick={() => {
+                            setInfo(false);
+                          }}
                         >
-                          Call:{number}
+                          x
                         </button>
-                      ) : (
-                        <span className="Travel_call_btn">
-                          <MdAddIcCall onClick={handleClick} />
-                        </span>
-                      )}
-                    </span>
-                  </div>
-                ))}
+                      </span> */}
+                      <span>
+                        {user ? (
+                          <span
+                            onClick={() =>
+                              (window.location.href = `tel:${number}`)
+                            }
+                            className="Travel_call_btn"
+                          >
+                            <SlCallOut />
+                          </span>
+                        ) : (
+                          <span
+                            className="Travel_call_btn"
+                            onClick={handleClick}
+                          >
+                            <MdAddIcCall />
+                          </span>
+                        )}
+                      </span>
+                    </div>
+                  )
+                )}
               </div>
             ) : (
               <div className="loading-container">
