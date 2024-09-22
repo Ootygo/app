@@ -1,0 +1,28 @@
+.Mybooking{
+    height: fit-content;
+    background-color: black;
+    color: white;
+    padding: 15px;
+}
+.Mybooking_contant_Vehicles{
+    width: 280px;
+    background-color: rgb(211, 208, 208);
+    border-radius: 5px;
+    padding: 5px;
+    color: black;
+}
+.Mybooking>h1{
+    margin: 0;
+}
+.Delete_vehicle{
+    border: none;
+    outline: none;
+    background-color: red;
+    color: rgb(255, 255, 255);
+    margin-left: 100px;
+    border-radius: 5px;
+}
+.Delete_vehicle:hover{
+    transform: steps(1.1);
+    transition: 0.3s;
+}

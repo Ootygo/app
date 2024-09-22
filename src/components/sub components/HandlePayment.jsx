@@ -1,45 +1,38 @@
-import React from "react";
-import axios from "axios";
+import React from 'react';
 
-const HandlePayment = async () => {
-  const orderUrl = "https://g87p8h4853.execute-api.ap-south-1.amazonaws.com";
-  const { data } = await axios.post(orderUrl, { amount: 10 }); // amount in INR
+const RazorpaySubscription = () => {
+  const handlePayment = async () => {
+    const response = await fetch('/create-subscription', { method: 'POST' });
+    const data = await response.json();
 
-  const options = {
-    key: "OhtNTKXezNMliJ",
-    amount: data.amount,
-    currency: data.currency,
-    name: "OotyGO",
-    description: "Test Transaction",
-    order_id: data.id,
-    handler: function (response) {
-      alert(response.razorpay_payment_id);
-      alert(response.razorpay_order_id);
-      alert(response.razorpay_signature);
-    },
-    prefill: {
-      name: "kavi",
-      email: "your.email@example.com",
-      contact: "9999999999",
-    },
-    notes: {
-      address: "5/175, kakaachi",
-    },
-    theme: {
-      color: "#3399cc",
-    },
+    const options = {
+      key: 'YOUR_KEY_ID',
+      subscription_id: data.id,
+      name: 'Hotel Booking App',
+      description: 'Subscription for uploading hotels',
+      handler: function (response) {
+        alert('Payment successful!');
+        // Handle successful payment here
+      },
+      prefill: {
+        name: 'Customer Name',
+        email: 'customer@example.com',
+        contact: '9999999999'
+      },
+      theme: {
+        color: '#F37254'
+      }
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
   };
 
-  const rzp1 = new window.Razorpay(options);
-  rzp1.open();
-};
-
-const PaymentButton = () => {
   return (
-    <div>
-      <button onClick={HandlePayment}>Pay Now</button>
-    </div>
+    <button onClick={handlePayment}>
+      Subscribe
+    </button>
   );
 };
 
-export default PaymentButton;
+export default RazorpaySubscription;
