@@ -9,26 +9,26 @@
   background-color: rgba(65, 236, 151, 0.689);
   width: fit-content;
   transition: 0.5s;
-  border-radius: 5px;padding: 2px;
+  border-radius: 5px;
+  padding: 2px;
 }
-.Plan_Selector:hover{
-    transform: scale(1.1);
-    filter: drop-shadow(5px 5px 20px  rgba(114, 177, 216, 0.405));
-    .Price{
-        filter: drop-shadow(10px 10px 20px rgba(65, 236, 151, 0.689));
-    }
-    
+.Plan_Selector:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(5px 5px 20px rgba(114, 177, 216, 0.405));
+  .Price {
+    filter: drop-shadow(10px 10px 20px rgba(65, 236, 151, 0.689));
+  }
 }
 .Plan_Selector {
   display: block;
-  height: 250px;
-  width: 230px;
+  height: 320px;
+  width: 290px;
   margin-bottom: 30px;
   border: 2px solid rgba(114, 177, 216, 0.405);
   border-radius: 5px;
   padding: 5px;
+  padding-left: 10px;
   transition: 0.3s;
-  
 }
 .Plan_select {
   height: 20px;
@@ -36,28 +36,45 @@
   background-color: greenyellow;
   cursor: pointer;
 }
-.Sub_Btn{
-    border: none;
-    border-radius: 5px;
-    padding: 5px;
-    cursor: pointer;
-    text-align: center;
-    margin-left: 20px;
+.Sub_Btn {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 20px;
 }
-.Sub_Btn>a{
-    text-decoration: unset;
-    color: black;
+.Sub_Btn > a {
+  text-decoration: unset;
+  color: black;
 }
-.Sub_Btn_non{
-    display: none;
+.Sub_Btn_non {
+  display: none;
 }
-.Payment_Email{
-    margin: 0;
-    padding: 10px;
+.Payment_Email {
+  margin: 0;
+  padding: 10px;
+}
+.Payment_Email > svg {
+  height: 30px;
+  width: 30px;
+}
+.Sub_Wahtsapp {
+  cursor: pointer;
+}
+.Sub_Wahtsapp:hover {
+  transform: scale(1.2);
+  transition: 0.3s;
+
+  font-weight: 600;
 }
 @media only screen and (max-width: 900px) {
-    .Plans{
-        padding-left: 30px;
-        padding-bottom: 10px;
-    }
+  .Plans {
+    padding-left: 30px;
+    padding-bottom: 10px;
+  }
+  .Plan_Selector {
+    width: 290px;
+    padding: 10px;
+  }
 }

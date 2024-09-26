@@ -66,19 +66,24 @@ export default function Travel() {
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
-
+ 
   const handleSearch = () => {
-    const results = items.filter(
-      (item) =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.number.toString().includes(searchTerm.toString()) ||
-        item.sitting.toString().includes(searchTerm.toString()) ||
-        item.pkg.toString().includes(searchTerm.toString()) ||
-        item.car.toString().toLowerCase().includes(searchTerm.toString())
-    );
-    setFilteredItems(results);
-    setSearched(true);
+    if (searchTerm <= "") {
+      return null;
+    } else {
+      const results = items.filter(
+        (item) =>
+          item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.number.toString().includes(searchTerm.toString()) ||
+          item.sitting.toString().includes(searchTerm.toString()) ||
+          item.pkg.toString().includes(searchTerm.toString()) ||
+          item.car.toString().toLowerCase().includes(searchTerm.toString())
+      );
+      setFilteredItems(results);
+      setSearched(true);
+    }
   };
+  
   const handleFilter1 = () => {
     setSearched(false);
     const resultsFil1 = items.filter(
@@ -117,6 +122,7 @@ export default function Travel() {
                 value={searchTerm}
                 onChange={handleInputChange}
                 className="Travel_search_bar"
+                
               />
               <button onClick={handleSearch} className="Travel_Search_Btn">
                 <FaSearch />

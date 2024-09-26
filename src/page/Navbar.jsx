@@ -11,9 +11,9 @@ import { FaLocationDot } from "react-icons/fa6";
 import { RiHotelLine } from "react-icons/ri";
 import { PiVanBold } from "react-icons/pi";
 import { IoIosRestaurant } from "react-icons/io";
+
 import { useState, useEffect } from "react";
 import logo from "../logo.png";
-
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,7 +54,6 @@ function Navbar() {
           <Link to="/">
             <span>
               <img className="Navbar_menu2_logo" src={logo} alt="logo" />
-              
             </span>
           </Link>
         </span>
@@ -116,6 +115,7 @@ function Navbar() {
             </span>
           </Link>
         </span>
+
         <span>
           <Link to="/SignUp">
             <span className="Navbar_menu_item">
