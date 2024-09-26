@@ -1,142 +1,152 @@
-// PostHotelData.js
-import React, { useEffect, useState } from "react";
-import { postVehicleData } from "./dynamoDBservicevh";
-import "./PostHotelData.css";
-// import { useAuthenticator } from "@aws-amplify/ui-react";
+import React, { useState, useEffect } from "react";
 import AWS from "aws-sdk";
-
+import "./PostHotelData.css";
+import { ClipLoader } from "react-spinners";
+import { useAuthenticator } from "@aws-amplify/ui-react";
+// Configure AWS SDK
 AWS.config.update({
   region: process.env.REACT_APP_AWS_REGION,
-  credentials: {
-    accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
-  },
+  accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
 });
 
-const dynamoDB = new AWS.DynamoDB.DocumentClient();
+const s3 = new AWS.S3();
+const docClient = new AWS.DynamoDB.DocumentClient();
+
 
 const PostVehicleData = () => {
-  const [vehicleData, setVehicleData] = useState({
+  const initialFormData = {
     id: "",
     name: "",
+    car: "",
     imgurl: "",
-    number: 0,
-  });
+    number: "",
+    pkg: "",
+    sitting: "",
+    username: "",
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+  const { user } = useAuthenticator((context) => [context.user]);
+  useEffect(() => {
+    if (user) {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        username: user.signInDetails.loginId,
+      }));
+    }
+  }, [user]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setVehicleData({ ...vehicleData, [name]: value });
+    setFormData({
+      ...formData,
+      [name]: name === "number" ? Number(value) : value,
+    });
   };
+
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    setFormData({
+      ...formData,
+      [name]: files[0],
+    });
+  };
+
+  const uploadFile = async (file) => {
+    const params = {
+      Bucket: "ootygo-travel-partner",
+      Key: file.name,
+      Body: file,
+    };
+    const data = await s3.upload(params).promise();
+    return data.Location;
+  };
+
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
-
-    // Basic validation
-    if (!vehicleData.name || !vehicleData.imgurl || !vehicleData.number) {
-      alert("Please fill in all required fields");
-      return;
-    }
-
     try {
-      await postVehicleData(vehicleData);
-      // Reset the form fields
-      setVehicleData({
-        id: "",
-        name: "",
-        imgurl: "",
-        number: 0,
-      });
+      const imgurl = await uploadFile(formData.imgurl);
+
+      const params = {
+        TableName: "Ootygo-travel",
+        Item: {
+          ...formData,
+          imgurl,
+        },
+      };
+
+      await docClient.put(params).promise();
+      setLoading(false);
+      alert("Data saved successfully!");
+      setFormData(initialFormData);
+      window.location.reload();
     } catch (error) {
-      console.error("Error posting data:", error);
+      console.error("Error saving data:", error);
+      alert("Failed to save data.");
     }
   };
-
-  const getLastUpdatedItemId = async () => {
-    const params = {
-      TableName: "Ootygo-travel",
-      ScanIndexForward: false, // Get the latest item
-      Limit: 1,
-    };
-
-    try {
-      const data = await dynamoDB.scan(params).promise();
-      return data.Items.length > 0
-        ? data.Items[data.Items.length - 1].id
-        : null;
-    } catch (error) {
-      console.error("Error querying DynamoDB:", error);
-      return null;
-    }
-  };
-
-  const [lastUpdatedId, setLastUpdatedId] = useState(null);
-
-  useEffect(() => {
-    const fetchLastUpdatedId = async () => {
-      const id = await getLastUpdatedItemId();
-      setLastUpdatedId(id);
-    };
-
-    fetchLastUpdatedId();
-  }, []);
-
-  const newId = lastUpdatedId ? Number(lastUpdatedId) + 1 : null;
 
   return (
-    <>
-      <h2>Add your vehicle data</h2>
-      <div className="Post_Hotel_Data">
-        <form onSubmit={handleSubmit} className="Post_Hotel_Data_Content">
-          <label>
-            Vehicle id
-            <br />
-            <input
-              type="text"
-              name="id"
-              value={String(newId)}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <label>
-            Company Name
-            <br />
-            <input
-              type="text"
-              name="name"
-              value={vehicleData.name}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Vehicle Image URL
-            <br />
-            <input
-              type="text"
-              name="imgurl"
-              value={vehicleData.imgurl}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <label>
-            Mobile No
-            <br />
-            <input
-              type="number"
-              name="number"
-              value={vehicleData.number}
-              onChange={handleChange}
-              required
-              placeholder="1234567890"
-            />
-          </label>
-          <button type="submit" className="Hotel_Post_Btn">
-            Post My Vehicle
-          </button>
-        </form>
+    <form onSubmit={handleSubmit} className="Upload_hotel_form">
+      <input
+        type="text"
+        name="id"
+        value={formData.id}
+        onChange={handleChange}
+        placeholder="ID"
+        required
+      />
+      <input
+        type="text"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        placeholder="Travels Name"
+        required
+      />
+      <input
+        type="text"
+        name="car"
+        value={formData.car}
+        onChange={handleChange}
+        placeholder="Vehicle Name"
+        required
+      />
+      <input type="file" name="imgurl" onChange={handleFileChange} required />
+      <input
+        type="number"
+        name="number"
+        value={formData.number}
+        onChange={handleChange}
+        placeholder="Mobile Number"
+        required
+      />
+      <input
+        type="text"
+        name="pkg"
+        value={formData.pkg}
+        onChange={handleChange}
+        placeholder="Package"
+        required
+      />
+      <input
+        type="text"
+        name="sitting"
+        value={formData.sitting}
+        onChange={handleChange}
+        placeholder="Example 5+1"
+        required
+      />
+      <div>
+        <button type="submit" className="Upload_btn">
+          {loading && <ClipLoader />}Submit
+        </button>
       </div>
-    </>
+    </form>
   );
 };
 

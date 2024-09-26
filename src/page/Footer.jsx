@@ -54,6 +54,7 @@ function Footer() {
                 <h4 >About Us</h4>
               </Link>
               <Link to="/Terms" className="About_link Emailus_hover"><h4>SLA, Terms & Conditions, Privacy Policy</h4></Link>
+              <Link to="/Support" className="About_link Emailus_hover"> <h4>Support</h4></Link>
               
             </div>
           </div>

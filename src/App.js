@@ -18,6 +18,8 @@ import OotyBoatHouse from "./components/sub components/OotyBoatHouse";
 import KateriPark from "./components/sub components/KateriPark";
 import Partners from "./components/sub components/Prtners";
 import Terms from "./components/sub components/Terms";
+import Support from "./components/sub components/Support";
+
 
 const App = () => {
   return (
@@ -42,6 +44,7 @@ const App = () => {
             <Route path="/KateriPark" element={<KateriPark />} />
             <Route path="/Partners" element={<Partners />} />
             <Route path="/Terms" element={<Terms />} />
+            <Route path="/Support" element={<Support />} />
             
           </Routes>
         </Authenticator.Provider>

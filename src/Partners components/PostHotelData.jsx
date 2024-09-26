@@ -1,141 +1,161 @@
-// PostHotelData.js
-import React, { useEffect, useState } from "react";
-import { postHotelData } from "./dynamoDBService";
-import "./PostHotelData.css";
-// import { useAuthenticator } from "@aws-amplify/ui-react";
+import React, { useState, useEffect } from "react";
+import { useAuthenticator } from "@aws-amplify/ui-react";
 import AWS from "aws-sdk";
+import "./PostHotelData.css";
+import { ClipLoader } from "react-spinners";
 
+// Configure AWS SDK
 AWS.config.update({
   region: process.env.REACT_APP_AWS_REGION,
-  credentials: {
-    accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
-  },
+  accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
 });
 
-const dynamoDB = new AWS.DynamoDB.DocumentClient();
+const s3 = new AWS.S3();
+const docClient = new AWS.DynamoDB.DocumentClient();
 
 const PostHotelData = () => {
-
-
-  const [hotelData, setHotelData] = useState({
-    id: 0,
+  const initialFormData = {
+    id: "",
     name: "",
     imgurl: "",
+    imgurl2: "",
+    imgurl3: "",
+    video: "",
     rate: "",
-  });
+    username: "",
+    cell: "",
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+  const [loading, setLoading] = useState(false);
+  const { user } = useAuthenticator((context) => [context.user]);
+
+  useEffect(() => {
+    if (user) {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        username: user.signInDetails.loginId,
+      }));
+    }
+  }, [user]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setHotelData({ ...hotelData, [name]: value });
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    setFormData({
+      ...formData,
+      [name]: files[0],
+    });
+  };
+
+  const uploadFile = async (file) => {
+    const params = {
+      Bucket: "ootygo-asset-hotel",
+      Key: file.name,
+      Body: file,
+    };
+    const data = await s3.upload(params).promise();
+    return data.Location;
   };
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
-
-    // Basic validation
-    if (!hotelData.name || !hotelData.imgurl || !hotelData.rate) {
-      alert("Please fill in all required fields");
-      return;
-    }
-
     try {
-      await postHotelData(hotelData);
-      // Reset the form fields
-      setHotelData({
-        id: "",
-        name: "",
-        imgurl: "",
-        rate: "",
-      });
+      const imgurl = await uploadFile(formData.imgurl);
+      const imgurl2 = await uploadFile(formData.imgurl2);
+      const imgurl3 = await uploadFile(formData.imgurl3);
+      const video = await uploadFile(formData.video);
+
+      const params = {
+        TableName: "Ootygo-hotel",
+        Item: {
+          ...formData,
+          id: Number(formData.id),
+          imgurl,
+          imgurl2,
+          imgurl3,
+          video,
+          username: user.signInDetails.loginId, // Add the user's email to the item
+        },
+      };
+
+      await docClient.put(params).promise();
+      setLoading(false);
+      alert("Data saved successfully!");
+      setFormData(initialFormData);
+      window.location.reload();
     } catch (error) {
-      console.error("Error posting data:", error);
+      console.error("Error saving data:", error);
+      alert("Failed to save data.");
+      setLoading(false);
     }
   };
-
-  // Hotel id +++
-  const getLastUpdatedItemId = async () => {
-    const params = {
-      TableName: "Ootygo-hotel",
-      ScanIndexForward: false, // Get the latest item
-      Limit: 1,
-    };
-
-    try {
-      const data = await dynamoDB.scan(params).promise();
-      return data.Items.length > 0 ? data.Items[data.Items.length - 1].id : null;
-    } catch (error) {
-      console.error("Error querying DynamoDB:", error);
-      return null;
-    }
-  };
-
-  const [lastUpdatedId, setLastUpdatedId] = useState(null);
-
-  useEffect(() => {
-    const fetchLastUpdatedId = async () => {
-      const id = await getLastUpdatedItemId();
-      setLastUpdatedId(id);
-    };
-
-    fetchLastUpdatedId();
-  }, []);
-
-  const newId = lastUpdatedId ? Number(lastUpdatedId) + 1 : null;
-
 
   return (
     <>
-      <h2>Add your hotel data</h2>
-      <div className="Post_Hotel_Data">
-        <form onSubmit={handleSubmit} className="Post_Hotel_Data_Content">
-          <label>
-            Hotel Id
-            <br />
-            <input
-              type="number"
-              name="id"
-              value={newId}
-              onChange={handleChange}
-              required
-              
-            />
-          </label>
-          <label>
-            Name
-            <br />
-            <input
-              type="text"
-              name="name"
-              value={hotelData.name}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Hotel Image URL
-            <br />
-            <input
-              type="text"
-              name="imgurl"
-              value={hotelData.imgurl}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <label>
-            Rate
-            <br />
-            <input
-              type="text"
-              name="rate"
-              value={hotelData.rate}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <button type="submit" className="Hotel_Post_Btn">Post My Hotel</button>
-        </form>
-      </div>
+      <form onSubmit={handleSubmit} className="Upload_hotel_form">
+        <input
+          type="number"
+          name="id"
+          value={formData.id}
+          onChange={handleChange}
+          placeholder="ID"
+          required
+        />
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          placeholder="Staying Asset Name"
+          required
+        />
+        <input type="file" name="imgurl" onChange={handleFileChange} required />
+        <input
+          type="file"
+          name="imgurl2"
+          onChange={handleFileChange}
+          required
+        />
+        <input
+          type="file"
+          name="imgurl3"
+          onChange={handleFileChange}
+          required
+        />
+        <input type="file" name="video" onChange={handleFileChange} required />
+        <input
+          type="text"
+          name="rate"
+          value={formData.rate}
+          onChange={handleChange}
+          placeholder="Starting Rate"
+          required
+        />
+        <input
+          type="text"
+          name="cell"
+          value={formData.cell}
+          onChange={handleChange}
+          placeholder="Mobile No"
+          required
+        />
+
+        <div>
+          <button type="submit" className="Upload_btn">
+            {loading && <ClipLoader />}Submit
+          </button>
+        </div>
+      </form>
     </>
   );
 };

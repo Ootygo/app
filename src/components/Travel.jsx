@@ -66,19 +66,46 @@ export default function Travel() {
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
-
+ 
   const handleSearch = () => {
-    const results = items.filter(
-      (item) => item.name.toLowerCase().includes(searchTerm.toLowerCase())
-      // item.number.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      // item.sitting.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      // item.pkg.toLowerCase().includes(searchTerm.toLowerCase())
+    if (searchTerm <= "") {
+      return null;
+    } else {
+      const results = items.filter(
+        (item) =>
+          item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.number.toString().includes(searchTerm.toString()) ||
+          item.sitting.toString().includes(searchTerm.toString()) ||
+          item.pkg.toString().includes(searchTerm.toString()) ||
+          item.car.toString().toLowerCase().includes(searchTerm.toString())
+      );
+      setFilteredItems(results);
+      setSearched(true);
+    }
+  };
+  
+  const handleFilter1 = () => {
+    setSearched(false);
+    const resultsFil1 = items.filter(
+      (item) => item.pkg >= 999 && item.pkg <= 2000
     );
-    setFilteredItems(results);
+    setFilteredItems(resultsFil1);
     setSearched(true);
   };
-  //Travel Info
- // const [info, setInfo] = useState(false);
+  const handleFilter2 = () => {
+    setSearched(false);
+    const resultsFil2 = items.filter(
+      (item) => item.pkg >= 2000 && item.pkg <= 4000
+    );
+    setFilteredItems(resultsFil2);
+    setSearched(true);
+  };
+  const handleFilter3 = () => {
+    setSearched(false);
+    const resultsFil3 = items.filter((item) => item.pkg >= 4000);
+    setFilteredItems(resultsFil3);
+    setSearched(true);
+  };
 
   return (
     <>
@@ -95,11 +122,23 @@ export default function Travel() {
                 value={searchTerm}
                 onChange={handleInputChange}
                 className="Travel_search_bar"
+                
               />
               <button onClick={handleSearch} className="Travel_Search_Btn">
                 <FaSearch />
               </button>
             </div>
+          </div>
+          <div className="Travel_Vehicle_Filter">
+            <button onClick={handleFilter1} className="Travel_Vehicle_Filters">
+              1000 to 2000
+            </button>
+            <button onClick={handleFilter2} className="Travel_Vehicle_Filters">
+              2000 to 4000
+            </button>
+            <button onClick={handleFilter3} className="Travel_Vehicle_Filters">
+              4000 Above
+            </button>
           </div>
         </div>
         <div className="Travel_vehicles">
@@ -111,14 +150,15 @@ export default function Travel() {
                 {" "}
                 {filteredItems > [""] ? (
                   filteredItems.map(
-                    ({ name, imgurl, number, sitting, pkg }, index) => (
-                      <li key={index} className="Travel_contant_Vehicles">
+                    ({ name, car, imgurl, number, sitting, pkg }, index) => (
+                      <div key={index} className="Travel_contant_Vehicles">
                         <img
                           src={imgurl}
                           alt="test-img"
                           className="Stay_hotel_img"
                         />
                         <h3 className="Travel_Vehicle_title">{name}</h3>
+                        <h4 className="Travel_Car">{car}</h4>
                         <div className="Travel_Rete">
                           Pkg starts @ <b>{pkg}</b>
                         </div>
@@ -146,7 +186,7 @@ export default function Travel() {
                             </span>
                           )}
                         </span>
-                      </li>
+                      </div>
                     )
                   )
                 ) : (
@@ -166,14 +206,11 @@ export default function Travel() {
             </div>
           ) : null}
 
-          <h2 className="Travel_vehicles_title">
-            Our Authorized Travel Partners
-          </h2>
           <div className="Travel_contants">
             {data ? (
               <div className="Travel_contant_Vehicle">
                 {shuffledData.map(
-                  ({ name, imgurl, number, sitting, pkg }, index) => (
+                  ({ name, car, imgurl, number, sitting, pkg }, index) => (
                     <div key={index} className="Travel_contant_Vehicles">
                       <img
                         src={imgurl}
@@ -181,30 +218,15 @@ export default function Travel() {
                         className="Stay_hotel_img"
                       />
                       <h3 className="Travel_Vehicle_title">{name}</h3>
+                      <h4 className="Travel_Car">{car}</h4>
                       <div className="Travel_Rete">
                         Pkg starts @ <b>{pkg}</b>
                       </div>
                       <span className="Travel_sitting_capacity">
                         <BiChair />
                         {sitting}
-                          {/* <IoMdInformationCircle
-                            onClick={() => {
-                              setInfo(true);
-                            }}
-                          /> */}
                       </span>
-                      {/* <span
-                        className={info ? "Travel_Info" : "Travel_Info_none"}
-                      >
-                        1. adkjfhadf
-                        <button
-                          onClick={() => {
-                            setInfo(false);
-                          }}
-                        >
-                          x
-                        </button>
-                      </span> */}
+
                       <span>
                         {user ? (
                           <span

@@ -1,24 +1,35 @@
-.Post_Hotel_Data{
+.Upload_hotel_form{
+  max-width: 280px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  
-  text-align: center;
-}
-.Post_Hotel_Data_Content{
-  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  
-  justify-content: center;
-  align-items: center;
-  width: 350px;
+  background-color: rgba(174, 171, 171, 0.785);
+  padding: 10px;
+  min-height: 350px;
+  max-height: fit-content;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 5px rgb(97, 207, 237));
 }
-.Post_Hotel_Data_Content>label>input{
-    color: black;
+
+.Upload_hotel_form>input{
+  width: 220px;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.187);
+  color: white;
 }
-.Hotel_Post_Btn{
-  margin: 20px;
-  width: 150px;
+.Upload_btn{
+  background-color: rgb(63, 208, 65);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 200px;
+}
+.Upload_btn:hover{
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 5px rgb(63, 208, 65));
+  border: 1px solid black;
 }

@@ -20,6 +20,9 @@ export default function SignUp() {
   const handleClick = () => {
     navigate("/Partners");
   };
+  const handleClickSup = () => {
+    navigate("/Support");
+  };
   const components = {
     SignUp: {
       FormFields() {
@@ -59,8 +62,9 @@ export default function SignUp() {
                     {user.signInDetails.loginId}
                   </h1>
                   <div className="User_Profile_Section">
-                    <button className="Signin_btns">My bookings</button>
-                    <button className="Signin_btns">Support</button>
+                    <button className="Signin_btns" onClick={handleClickSup}>
+                      Support
+                    </button>
                     <button className="Signin_btns" onClick={handleClick}>
                       Partner
                     </button>
