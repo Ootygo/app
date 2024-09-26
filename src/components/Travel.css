@@ -287,7 +287,8 @@
     font-weight: 600;
   }
   .Travel_contant_search {
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-top: 10px;
   }
   .Travel_contant_search_btn {
     padding: 5px;
@@ -309,7 +310,7 @@
     transform: translate(140px, -20px);
   }
   .Travel_search_bar {
-    width: 300px;
+    width: 250px;
   }
   .Travel_Search_Result{
     padding-left: 10px;

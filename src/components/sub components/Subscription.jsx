@@ -2,7 +2,8 @@ import React from "react";
 // import axios from "axios";
 import "./Subscription.css";
 import { GoDotFill } from "react-icons/go";
-// import { useAuthenticator } from "@aws-amplify/ui-react";
+import { FaSquareWhatsapp } from "react-icons/fa6";
+import { useAuthenticator } from "@aws-amplify/ui-react";
 const SubscriptionComponent = () => {
   //   const [selectedSubscription, setSelectedSubscription] = useState("");
   //   const { hotelOwnerId } = useAuthenticator((context) => [context.user]);
@@ -48,7 +49,7 @@ const SubscriptionComponent = () => {
     },
     {
       id: "plan_3",
-      name: "Super Unlimited",
+      name: "Super Ultimate",
       price: (
         <div>
           <p className="Price">₹ 999/month</p>
@@ -65,30 +66,34 @@ const SubscriptionComponent = () => {
       ),
       paylink: "https://rzp.io/i/L3gwPQ3H9",
     },
+    {
+      id: "plan_4",
+      name: "Mega Plan",
+      price: (
+        <div>
+          <p className="Price">₹ 4999/month</p>
+          <p>
+            <GoDotFill /> Advertise on the home page & Social Media
+          </p>
+          <p>
+            <GoDotFill /> Attract more guests
+          </p>
+          <p>
+            <GoDotFill /> Priority recommendation
+          </p>
+        </div>
+      ),
+      paylink: "https://rzp.io/i/ImZOZj00PO",
+    },
   ];
 
-  //   const handleSubscription = async () => {
-  //     if (!selectedSubscription) {
-  //       alert("Please select a subscription plan and enter your hotel owner ID.");
-  //       return;
-  //     }
-
-  //     try {
-  //       const response = await axios.post(
-  //         "https://m17a2fmkr4.execute-api.ap-south-1.amazonaws.com/default/Subfunction",
-  //         {
-  //           subscriptionId: selectedSubscription,
-  //           hotelOwnerId,
-  //         }
-  //       );
-  //       alert("Subscription successful: " + response.data.message);
-  //       console.log("res", response);
-  //     } catch (error) {
-  //       console.error("Subscription failed:", error);
-  //       alert("Subscription failed: " + error.message);
-  //     }
-  //   };
-
+  const openWhatsApp = () => {
+    const url = `https://api.whatsapp.com/send?phone=${9655062118}&text=${encodeURIComponent(
+      `Hi this is ${user.signInDetails.loginId}, i have subscribed to OotyGo`
+    )}`;
+    window.open(url, "_blank");
+  };
+  const { user } = useAuthenticator((context) => [context.user]);
   return (
     <div>
       <h2>Subscribe a plan to start</h2>
@@ -96,14 +101,6 @@ const SubscriptionComponent = () => {
         {subscriptionPlans.map((plan) => (
           <span key={plan.id}>
             <span className="Plan_Selector">
-              {/* <input
-                type="radio"
-                className="Plan_select"
-                id={plan.id}
-                name="subscription"
-                value={plan.id}
-                onChange={(e) => setSelectedSubscription(e.target.value)}
-              /> */}
               <h3>{plan.name}</h3>
               <label>{plan.price}</label>
               <button className="Sub_Btn">
@@ -114,11 +111,13 @@ const SubscriptionComponent = () => {
         ))}
       </div>
       <h5 className="Payment_Email">
-        * After the subscription, Email the payment & asset details to
-        ootygo.official@gmail.com.
+        * After the subscription, send the payment & KYC (Any Id) details  to
+        ootygo.official@gmail.com. Or{" "}
+        <FaSquareWhatsapp onClick={openWhatsApp} className="Sub_Wahtsapp"/>
       </h5>
       <h5 className="Payment_Email">
-        * Within 24 hour the Asset will be displayed on www.ootygo.in.
+        * After a basic verification the Asset will be displayed on
+        www.ootygo.in.
       </h5>
       <h5 className="Payment_Email">
         * For support{" "}
