@@ -114,59 +114,60 @@ function Mybookings() {
     <>
       <div className="Mybooking">
         <h1>My Assets</h1>
+        <div className="Mybooking_Assets">
+          {loginUserHotel.map(({ id, name, imgurl, rate }, index) => (
+            <div key={index} className="Mybooking_contant_Vehicles">
+              <img
+                src={imgurl}
+                alt="test-img"
+                className="Paid_user__Vehicle_Img"
+              />
+              <h3 className="Travel_Vehicle_title">{name}</h3>
+              <div className="Travel_Rete">
+                Pkg starts @ <b>{rate}</b>
+              </div>
 
-        {loginUserHotel.map(({ id, name, imgurl, rate }, index) => (
-          <div key={index} className="Mybooking_contant_Vehicles">
-            <img
-              src={imgurl}
-              alt="test-img"
-              className="Paid_user__Vehicle_Img"
-            />
-            <h3 className="Travel_Vehicle_title">{name}</h3>
-            <div className="Travel_Rete">
-              Pkg starts @ <b>{rate}</b>
+              <button>Update</button>
+              <button
+                onClick={() => deleteItem(id, name)}
+                className="Delete_vehicle"
+              >
+                <MdDeleteForever />
+              </button>
             </div>
+          ))}
+          {loginUserHotel ? null : (
+            <p className="No_vehicle_found">
+              <ImSad /> No assets found, Add your asset below
+            </p>
+          )}
+          {loginUserVehicle.map(({ id, name, imgurl, pkg }, index) => (
+            <div key={index} className="Mybooking_contant_Vehicles">
+              <img
+                src={imgurl}
+                alt="test-img"
+                className="Paid_user__Vehicle_Img"
+              />
+              <h3 className="Travel_Vehicle_title">{name}</h3>
+              <div className="Travel_Rete">
+                Pkg starts @ <b>{pkg}</b>
+              </div>
 
-            <button>Update</button>
-            <button
-              onClick={() => deleteItem(id, name)}
-              className="Delete_vehicle"
-            >
-              <MdDeleteForever />
-            </button>
-          </div>
-        ))}
-        {loginUserHotel ? null : (
-          <p className="No_vehicle_found">
-            <ImSad /> No assets found, Add your asset below
-          </p>
-        )}
-        {loginUserVehicle.map(({ id, name, imgurl, pkg }, index) => (
-          <div key={index} className="Mybooking_contant_Vehicles">
-            <img
-              src={imgurl}
-              alt="test-img"
-              className="Paid_user__Vehicle_Img"
-            />
-            <h3 className="Travel_Vehicle_title">{name}</h3>
-            <div className="Travel_Rete">
-              Pkg starts @ <b>{pkg}</b>
+              <button>Update</button>
+              <button
+                onClick={() => deleteVehicle(id, name)}
+                className="Delete_vehicle"
+              >
+                <MdDeleteForever />
+              </button>
             </div>
-
-            <button>Update</button>
-            <button
-              onClick={() => deleteVehicle(id, name)}
-              className="Delete_vehicle"
-            >
-              <MdDeleteForever />
-            </button>
-          </div>
-        ))}
-        {loginUserVehicle ? null : (
-          <p className="No_vehicle_found">
-            <ImSad /> No assets found, Add your asset below
-          </p>
-        )}
+          ))}
+          {loginUserVehicle ? null : (
+            <p className="No_vehicle_found">
+              <ImSad /> No assets found, Add your asset below
+            </p>
+          )}
+        </div>
       </div>
       <hr />
     </>
