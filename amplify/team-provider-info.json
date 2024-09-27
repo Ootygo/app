@@ -31,6 +31,11 @@
       "StackName": "amplify-ootygo-staging-352ba",
       "StackId": "arn:aws:cloudformation:ap-south-1:046474817983:stack/amplify-ootygo-staging-352ba/856dceb0-fcaa-11ee-a1e5-06f6c0cda6be",
       "AmplifyAppId": "d2ss70d0rjqeqo"
+    },
+    "categories": {
+      "auth": {
+        "ootygo3501a521": {}
+      }
     }
   }
 }
